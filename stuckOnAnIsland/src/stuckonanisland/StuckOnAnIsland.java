@@ -5,6 +5,7 @@
  */
 package stuckonanisland;
 
+import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Player;
 
 /**
@@ -24,6 +25,14 @@ public class StuckOnAnIsland {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        Game gameOne = new Game();
+        
+        gameOne.setNumberRounds(5);
+        gameOne.setTotalTime(70000);
+        
+        String gameInfo = gameOne.toString();
+        System.out.println(gameInfo);
     }
     
 }
