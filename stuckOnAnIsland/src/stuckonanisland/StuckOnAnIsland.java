@@ -9,6 +9,11 @@ import byui.cit260.stuckOnAnIsland.model.Actor;
 import byui.cit260.stuckOnAnIsland.model.Backpack;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Player;
+import byui.cit260.stuckOnAnIsland.model.islandInventory;
+import byui.cit260.stuckOnAnIsland.model.raftMaterial;
+import byui.cit260.stuckOnAnIsland.model.raftStatus;
+import byui.cit260.stuckOnAnIsland.model.toolInventory;
+import byui.cit260.stuckOnAnIsland.model.wreckageInventory;
 
 /**
  *
@@ -57,6 +62,54 @@ public class StuckOnAnIsland {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        //islandInventory Class
+        islandInventory islandInventory = new islandInventory();
+        
+        islandInventory.setDescription("water");
+        islandInventory.setInventoryQuantity(1);
+        islandInventory.setInventorySize(25);
+        islandInventory.setHealthPoints(5.5);
+        
+        String islandInventoryInfo = islandInventory.toString();
+        System.out.println(islandInventoryInfo);
+        
+        //raftMaterial Class
+        raftMaterial raftMaterial = new raftMaterial();
+        
+        raftMaterial.setMaterialVine("vine");
+        raftMaterial.setMaterialWood("wood");
+        
+        String raftMaterialInfo = raftMaterial.toString();
+        System.out.println(raftMaterialInfo);
+        
+        //raftStatus Class
+        raftStatus raftStatus = new raftStatus();
+        
+        raftStatus.setDescription("raft");
+        raftStatus.setRaftCompletionPercentage(95.6);
+        raftStatus.setRaftMaterialList("wood");
+        
+        String raftStatusInfo = raftStatus.toString();
+        System.out.println(raftStatusInfo);
+        
+        //toolInventory Class
+        toolInventory toolInventory = new toolInventory();
+        
+        toolInventory.setDescription("axe");
+        toolInventory.setToolType("weapon");
+        
+        String toolInventoryInfo = toolInventory.toString();
+        System.out.println(toolInventoryInfo);
+        
+        //wreckageInventory Class
+        wreckageInventory wreckageInventory = new wreckageInventory();
+        
+        wreckageInventory.setDescription("matches");
+        wreckageInventory.setInventoryType("fire");
+        
+        String wreckageInventoryInfo = wreckageInventory.toString();
+        System.out.println(wreckageInventoryInfo);
     }
     
 }
