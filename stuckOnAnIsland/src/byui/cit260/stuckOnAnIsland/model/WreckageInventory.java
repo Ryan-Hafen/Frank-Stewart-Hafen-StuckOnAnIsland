@@ -11,11 +11,11 @@ import java.util.Objects;
  *
  * @author RyanHafen
  */
-public class wreckageInventory implements Serializable{
+public class WreckageInventory implements Serializable{
     private String description;
     private String inventoryType;
 
-    public wreckageInventory() {
+    public WreckageInventory() {
     }
     
     
@@ -55,7 +55,7 @@ public class wreckageInventory implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final wreckageInventory other = (wreckageInventory) obj;
+        final WreckageInventory other = (WreckageInventory) obj;
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }

@@ -11,11 +11,11 @@ import java.util.Objects;
  *
  * @author RyanHafen
  */
-public class raftMaterial implements Serializable{
+public class RaftMaterial implements Serializable{
     private String materialWood;
     private String materialVine;
 
-    public raftMaterial() {
+    public RaftMaterial() {
     }
 
     public String getMaterialWood() {
@@ -53,7 +53,7 @@ public class raftMaterial implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final raftMaterial other = (raftMaterial) obj;
+        final RaftMaterial other = (RaftMaterial) obj;
         if (!Objects.equals(this.materialWood, other.materialWood)) {
             return false;
         }

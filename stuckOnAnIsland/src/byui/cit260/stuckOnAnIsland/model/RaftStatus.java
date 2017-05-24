@@ -11,12 +11,12 @@ import java.util.Objects;
  *
  * @author RyanHafen
  */
-public class raftStatus implements Serializable{
+public class RaftStatus implements Serializable{
     private String description;
     private double raftCompletionPercentage;
     private String raftMaterialList;
 
-    public raftStatus() {
+    public RaftStatus() {
     }
 
     public String getDescription() {
@@ -63,7 +63,7 @@ public class raftStatus implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final raftStatus other = (raftStatus) obj;
+        final RaftStatus other = (RaftStatus) obj;
         if (Double.doubleToLongBits(this.raftCompletionPercentage) != Double.doubleToLongBits(other.raftCompletionPercentage)) {
             return false;
         }
@@ -78,6 +78,6 @@ public class raftStatus implements Serializable{
 
     @Override
     public String toString() {
-        return "raftStatus{" + "description=" + description + ", raftCompletionPercentage=" + raftCompletionPercentage + ", raftMaterialList=" + raftMaterialList + '}';
+        return "RaftStatus{" + "description=" + description + ", raftCompletionPercentage=" + raftCompletionPercentage + ", raftMaterialList=" + raftMaterialList + '}';
     }
 }
