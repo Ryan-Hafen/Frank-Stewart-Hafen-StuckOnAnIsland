@@ -9,7 +9,7 @@ import byui.cit260.stuckOnAnIsland.model.Actor;
 import byui.cit260.stuckOnAnIsland.model.Backpack;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Player;
-import byui.cit260.stuckOnAnIsland.model.islandInventory;
+import byui.cit260.stuckOnAnIsland.model.IslandInventory;
 import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
 import byui.cit260.stuckOnAnIsland.model.RaftStatus;
 import byui.cit260.stuckOnAnIsland.model.ToolInventory;
@@ -64,7 +64,7 @@ public class StuckOnAnIsland {
         System.out.println(playerInfo);
         
         //islandInventory Class
-        islandInventory islandInventory = new islandInventory();
+        IslandInventory islandInventory = new IslandInventory();
         
         islandInventory.setDescription("water");
         islandInventory.setInventoryQuantity(1);
