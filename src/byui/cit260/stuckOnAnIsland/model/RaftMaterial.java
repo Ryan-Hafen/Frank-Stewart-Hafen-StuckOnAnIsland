@@ -57,10 +57,7 @@ public class RaftMaterial implements Serializable{
         if (!Objects.equals(this.materialWood, other.materialWood)) {
             return false;
         }
-        if (!Objects.equals(this.materialVine, other.materialVine)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.materialVine, other.materialVine);
     }
 
     @Override
