@@ -11,11 +11,11 @@ import java.util.Objects;
  *
  * @author RyanHafen
  */
-public class toolInventory implements Serializable{
+public class ToolInventory implements Serializable{
     private String description;
     private String toolType;
 
-    public toolInventory() {
+    public ToolInventory() {
     }
     
     
@@ -55,7 +55,7 @@ public class toolInventory implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final toolInventory other = (toolInventory) obj;
+        final ToolInventory other = (ToolInventory) obj;
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
