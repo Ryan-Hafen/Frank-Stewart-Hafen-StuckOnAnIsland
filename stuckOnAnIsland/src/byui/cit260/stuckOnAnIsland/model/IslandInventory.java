@@ -12,13 +12,13 @@ import java.util.Objects;
  *
  * @author RyanHafen
  */
-public class islandInventory implements Serializable{
+public class IslandInventory implements Serializable{
     private String description;
     private double healthPoints;
     private int inventoryQuantity;
     private double inventorySize;
 
-    public islandInventory() {
+    public IslandInventory() {
     }
 
     public String getDescription() {
@@ -74,7 +74,7 @@ public class islandInventory implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final islandInventory other = (islandInventory) obj;
+        final IslandInventory other = (IslandInventory) obj;
         if (Double.doubleToLongBits(this.healthPoints) != Double.doubleToLongBits(other.healthPoints)) {
             return false;
         }
@@ -92,7 +92,7 @@ public class islandInventory implements Serializable{
 
     @Override
     public String toString() {
-        return "islandInventory{" + "description=" + description + ", healthPoints=" + healthPoints + ", inventoryQuantity=" + inventoryQuantity + ", inventorySize=" + inventorySize + '}';
+        return "IslandInventory{" + "description=" + description + ", healthPoints=" + healthPoints + ", inventoryQuantity=" + inventoryQuantity + ", inventorySize=" + inventorySize + '}';
     }
     
     
