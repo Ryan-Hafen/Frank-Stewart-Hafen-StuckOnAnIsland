@@ -15,7 +15,7 @@ public class BuildControl {
         if (amountInInventory < 0 || amountInInventory > 100) {
                 return -1;
         }
-        if (amountRequired > 100) {
+        if (amountRequired < 0 || amountRequired > 100) {
                 return -1;
         }
         double vineNeeded = amountRequired - amountInInventory;

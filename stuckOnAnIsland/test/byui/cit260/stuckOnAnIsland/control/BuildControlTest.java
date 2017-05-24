@@ -27,7 +27,7 @@ public class BuildControlTest {
         /******************************************
          * Test Case #1
          *****************************************/
-        System.out.println("\tTest case #1");
+        System.out.println("Test case #1");
         
         // input values for test case 1
         double amountInInventory = 50.0;
@@ -44,9 +44,6 @@ public class BuildControlTest {
         
         // compare expected return value twith actual value returned
         assertEquals(expResult, result, 0.0);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
         /******************************************
          * Test Case #2
@@ -66,9 +63,6 @@ public class BuildControlTest {
         // compare expected return value twith actual value returned
         assertEquals(expResult, result, 0.0);
         
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
         /******************************************
          * Test Case #3
          *****************************************/
@@ -86,9 +80,6 @@ public class BuildControlTest {
         
         // compare expected return value twith actual value returned
         assertEquals(expResult, result, 0.0);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
         /******************************************
          * Test Case #4
@@ -108,9 +99,6 @@ public class BuildControlTest {
         // compare expected return value twith actual value returned
         assertEquals(expResult, result, 0.0);
         
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
         /*****************************************
          * Test Case #5
          *****************************************/
@@ -121,16 +109,13 @@ public class BuildControlTest {
          amountRequired = 100.0;
         
         // expected output value
-         expResult = 0.0;
+         expResult = 100.0;
         
         // call function to run test
          result = instance.calcWoodNeeded(amountInInventory, amountRequired);
         
         // compare expected return value twith actual value returned
         assertEquals(expResult, result, 0.0);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
         
         /******************************************
          * Test Case #6
@@ -149,9 +134,6 @@ public class BuildControlTest {
         
         // compare expected return value twith actual value returned
         assertEquals(expResult, result, 0.0);
-        
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
