@@ -10,10 +10,10 @@ import byui.cit260.stuckOnAnIsland.model.Backpack;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Player;
 import byui.cit260.stuckOnAnIsland.model.islandInventory;
-import byui.cit260.stuckOnAnIsland.model.raftMaterial;
-import byui.cit260.stuckOnAnIsland.model.raftStatus;
-import byui.cit260.stuckOnAnIsland.model.toolInventory;
-import byui.cit260.stuckOnAnIsland.model.wreckageInventory;
+import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
+import byui.cit260.stuckOnAnIsland.model.RaftStatus;
+import byui.cit260.stuckOnAnIsland.model.ToolInventory;
+import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
 
 /**
  *
@@ -75,7 +75,7 @@ public class StuckOnAnIsland {
         System.out.println(islandInventoryInfo);
         
         //raftMaterial Class
-        raftMaterial raftMaterial = new raftMaterial();
+        RaftMaterial raftMaterial = new RaftMaterial();
         
         raftMaterial.setMaterialVine("vine");
         raftMaterial.setMaterialWood("wood");
@@ -84,7 +84,7 @@ public class StuckOnAnIsland {
         System.out.println(raftMaterialInfo);
         
         //raftStatus Class
-        raftStatus raftStatus = new raftStatus();
+        RaftStatus raftStatus = new RaftStatus();
         
         raftStatus.setDescription("raft");
         raftStatus.setRaftCompletionPercentage(95.6);
@@ -94,7 +94,7 @@ public class StuckOnAnIsland {
         System.out.println(raftStatusInfo);
         
         //toolInventory Class
-        toolInventory toolInventory = new toolInventory();
+        ToolInventory toolInventory = new ToolInventory();
         
         toolInventory.setDescription("axe");
         toolInventory.setToolType("weapon");
@@ -103,7 +103,7 @@ public class StuckOnAnIsland {
         System.out.println(toolInventoryInfo);
         
         //wreckageInventory Class
-        wreckageInventory wreckageInventory = new wreckageInventory();
+        WreckageInventory wreckageInventory = new WreckageInventory();
         
         wreckageInventory.setDescription("matches");
         wreckageInventory.setInventoryType("fire");
