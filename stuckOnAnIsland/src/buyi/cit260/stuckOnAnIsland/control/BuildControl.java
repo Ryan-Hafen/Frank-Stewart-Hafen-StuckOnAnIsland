@@ -11,4 +11,28 @@ package buyi.cit260.stuckOnAnIsland.control;
  */
 public class BuildControl {
     
+    public double calcWoodNeeded(double amountInInventory, double amountRequired) {
+        if (amountInInventory < 0 || amountInInventory > 100) {
+                return -1;
+        }
+        if (amountRequired < 0 || amountRequired > 100) {
+                return -1;
+        }
+        double woodNeeded = amountRequired - amountInInventory;
+                
+        return woodNeeded;
+    }
+    
+    public double calcVineNeeded(double amountInInventory, double amountRequired) {
+        if (amountInInventory < 0 || amountInInventory > 100) {
+                return -1;
+        }
+        if (amountRequired < 0 || amountRequired > 100) {
+                return -1;
+        }
+        double vineNeeded = amountRequired - amountInInventory;
+                
+        return vineNeeded;
+    }
 }
+
