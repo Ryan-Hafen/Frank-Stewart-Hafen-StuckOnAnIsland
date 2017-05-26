@@ -15,10 +15,28 @@ public class Map implements Serializable {
 private String resourceDescription;
 private double resourceQuantity;
 private double resourceCapacity;
-
+private long x;
+private long y;
+        
     public Map() {
     }
 
+    public long getX() {
+        return x;
+    }
+
+    public void setX(long x) {
+        this.x = x;
+    }
+
+    public long getY() {
+        return y;
+    }
+
+    public void setY(long y) {
+        this.y = y;
+    }
+       
     public String getResourceDescription() {
         return resourceDescription;
     }
@@ -46,9 +64,11 @@ private double resourceCapacity;
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 73 * hash + Objects.hashCode(this.resourceDescription);
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceQuantity) ^ (Double.doubleToLongBits(this.resourceQuantity) >>> 32));
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceCapacity) ^ (Double.doubleToLongBits(this.resourceCapacity) >>> 32));
+        hash = 67 * hash + Objects.hashCode(this.resourceDescription);
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.resourceQuantity) ^ (Double.doubleToLongBits(this.resourceQuantity) >>> 32));
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.resourceCapacity) ^ (Double.doubleToLongBits(this.resourceCapacity) >>> 32));
+        hash = 67 * hash + (int) (this.x ^ (this.x >>> 32));
+        hash = 67 * hash + (int) (this.y ^ (this.y >>> 32));
         return hash;
     }
 
@@ -70,6 +90,12 @@ private double resourceCapacity;
         if (Double.doubleToLongBits(this.resourceCapacity) != Double.doubleToLongBits(other.resourceCapacity)) {
             return false;
         }
+        if (this.x != other.x) {
+            return false;
+        }
+        if (this.y != other.y) {
+            return false;
+        }
         if (!Objects.equals(this.resourceDescription, other.resourceDescription)) {
             return false;
         }
@@ -78,7 +104,9 @@ private double resourceCapacity;
 
     @Override
     public String toString() {
-        return "Map{" + "resourceDescription=" + resourceDescription + ", resourceQuantity=" + resourceQuantity + ", resourceCapacity=" + resourceCapacity + '}';
+        return "Map{" + "resourceDescription=" + resourceDescription + ", resourceQuantity=" + resourceQuantity + ", resourceCapacity=" + resourceCapacity + ", x=" + x + ", y=" + y + '}';
     }
+
+   
 
 }
