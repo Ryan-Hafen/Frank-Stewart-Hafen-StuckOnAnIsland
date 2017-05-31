@@ -5,41 +5,41 @@
  */
 package byui.cit260.stuckOnAnIsland.view;
 
-import buyi.cit260.stuckOnAnIsland.control.GameControl;
 import java.util.Scanner;
-import stuckonanisland.StuckOnAnIsland;
 
 /**
  *
  * @author hafenr
  */
-public class MainMenuView {
+public class HelpMenuView {
     
     private String promptMessage;
     
-    public MainMenuView() {
+    public HelpMenuView() {
         this.promptMessage =     "\n****************************************************************"
                                 + "\n*                                                              *"
-                                + "\nN - Start new game "
-                                + "\nG - Get and start a saved game "
-                                + "\nH - Get help on how to play the game "
-                                + "\nS - Save game "
-                                + "\nQ - Quit "
+                                + "\nG - What is the goal of the game? "
+                                + "\nM - how to move "
+                                + "\nE - Estimating the amount of resources "
+                                + "\nH - Harvesting resources "
+                                + "\nD - Build the raft "
+                                + "\nQ - Return to Main Menu "
                                 + "\nPlease enter your selection: "
                                 + "\n*                                                              *"
                                 + "\n****************************************************************";
     }
-    
-    void displayMainMenuView() {
+
+    void displayHelpMenu() {
         boolean done = false; //set flag to not done
+        
         do {
             // promplt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
-                return; // exit the game
+            String helpMenuOption = this.getMenuOption();
+            //if (helpMenuOption.toUpperCase().equals("Q")) //user wants to quit
+            //    return; // exit the game
             
             // do the requested action and dispaly the next view
-            done = this.doAction(menuOption);
+            done = this.doAction(helpMenuOption);
         } while (!done);
     }
 
@@ -59,7 +59,7 @@ public class MainMenuView {
                 continue;
             }
             else if (value.length() > 1 ) { // value is blank
-                System.out.println("\nInvalid value: value must be N, G, H, S, or Q");
+                System.out.println("\nInvalid value: value must be G, M, E, H, D, or Q");
                 continue;
             }
             
@@ -69,21 +69,29 @@ public class MainMenuView {
         return value; // return the value entered
     }
 
-    private boolean doAction(String menuOption) {
-        menuOption = menuOption.toUpperCase(); //convert choice to upper case
+    private boolean doAction(String helpMenuOption) {
+        helpMenuOption = helpMenuOption.toUpperCase(); //convert choice to upper case
         
-        switch (menuOption) {
-            case "N": // create and start a new game
-                this.startNewGame();
+        switch (helpMenuOption) {
+            case "G": // What is the goal of the game? 
+                System.out.println("\n**** Add text for What is the goal of the game? ****");
                 break;
-            case "G": // get and start an existing game
-                this.startExistingGame();
+            case "M": // How to move
+                System.out.println("\n**** Add text for How to move ****");
                 break;
-            case "H": //display the help menu
-                this.displayHelpMenu();
+            case "E": // Estimating the amount of resources
+                System.out.println("\n**** Add text for Estimating the amount of resources ****");
                 break;
-            case "S": // save the current game
-                this.saveGame();
+            case "H": // Harvesting resources
+                System.out.println("\n**** Add text for Harvesting resources ****");
+                break;
+            case "D": // Delivering resources to warehouse
+                System.out.println("\n**** Add text for Delivering resources to warehouse ****");
+                break;
+            case "Q": // Quit
+                // display the game menu
+                MainMenuView mainMenuView = new MainMenuView();
+                mainMenuView.displayMainMenuView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -93,26 +101,6 @@ public class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(StuckOnAnIsland.getPlayer());
-        
-        // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
-    }
-
-    private void startExistingGame() {
-        System.out.println("\n*** startExistingGame function called ***");
-    }
-
-    private void displayHelpMenu() {
-        // display the Help menu
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
-    }
-
-    private void saveGame() {
-        System.out.println("\n*** saveGame function called ***");
-    }
+    
     
 }
