@@ -96,7 +96,7 @@ public class MapControl {
     
     
     public double calcHealthUsed(double startLocation, double endLocation, double startHealth) {
-        double endHealth = startHealth - Math.abs(endLocation - startLocation);
+        endHealth = startHealth - Math.abs(endLocation - startLocation);
         if (endHealth < 0.0) 
             {
                 return -999.0;
