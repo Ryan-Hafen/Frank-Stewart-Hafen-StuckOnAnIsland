@@ -14,6 +14,7 @@ import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
 import byui.cit260.stuckOnAnIsland.model.RaftStatus;
 import byui.cit260.stuckOnAnIsland.model.ToolInventory;
 import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
+import byui.cit260.stuckOnAnIsland.view.StartProgramView;
 
 /**
  *
@@ -24,7 +25,32 @@ public class StuckOnAnIsland {
     /**
      * @param args the command line arguments
      */
+    private static Game currentGame = null;
+    private static Player player = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        StuckOnAnIsland.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+    
+    public static void setPlayer(Player player) {
+        StuckOnAnIsland.player = player;
+    }
+    
+        
     public static void main(String[] args) {
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+        
+        
         //Actor Class
         Actor actorOne = new Actor();
         
