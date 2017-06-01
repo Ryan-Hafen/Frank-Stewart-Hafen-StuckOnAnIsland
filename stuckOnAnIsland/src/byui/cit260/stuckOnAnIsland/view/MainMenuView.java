@@ -18,6 +18,9 @@ public class MainMenuView {
     private String promptMessage;
     
     public MainMenuView() {
+            
+
+                
         this.promptMessage =     "\n****************************************************************"
                                 + "\n*                                                              *"
                                 + "\nN - Start new game "

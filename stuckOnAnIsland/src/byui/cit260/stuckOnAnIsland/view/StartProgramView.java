@@ -16,8 +16,44 @@ import java.util.Scanner;
 public class StartProgramView {
     
     private String promptMessage;
+    private String headerMessage;
     
     public StartProgramView() {
+                System.out.println("\n\t****************************************************"
+                                + "\n\t****************************************************"
+                                + "\n\t**                                                **"
+                                + "\n\t**                                                **"
+                                + "\n\t**    XXXX    XXXXXX  XX    XX    XXXX   XX   XX  **"
+                                + "\n\t**  XX    XX    XX    XX    XX  XX    XX XX  XX   **"
+                                + "\n\t**  XXX         XX    XX    XX  XX       XX XX    **"
+                                + "\n\t**    XXXX      XX    XX    XX  XX       XXX      **"
+                                + "\n\t**       XXX    XX    XX    XX  XX       XXXX     **"
+                                + "\n\t**  XX    XX    XX    XX    XX  XX    XX XX  XX   **"
+                                + "\n\t**    XXXX      XX      XXXX      XXXX   XX   XX  **"
+                                + "\n\t**                                                **"
+                                + "\n\t**                                                **"
+                                + "\n\t**    XXXX    XX     XX        XXXX    XX     XX  **"	 	   		  		
+                                + "\n\t**  XX    XX  XXX    XX      XX    XX  XXX    XX  **" 	 
+                                + "\n\t**  XX    XX  XXXX   XX      XX    XX  XXXX   XX  **"	 	 					 	 		
+                                + "\n\t**  XX    XX  XX XX  XX      XXXXXXXX  XX XX  XX  **"
+                                + "\n\t**  XX    XX  XX  XX XX      XXXXXXXX  XX  XX XX  **"
+                                + "\n\t**  XX    XX  XX    XXX      XX    XX  XX    XXX  **"
+                                + "\n\t**    XXXX    XX     XX      XX    XX  XX     XX  **"	 	 
+                                + "\n\t**                                                **"
+                                + "\n\t**                                                **"
+                                + "\n\t**   XX   XXXX   XX      XXXX   XX     XX XXXX    **"
+                                + "\n\t**   XX XX    XX XX    XX    XX XXX    XX XX  XX  **"
+                                + "\n\t**   XX XXX      XX    XX    XX XXXX   XX XX  XX  **"
+                                + "\n\t**   XX   XXXX   XX    XXXXXXXX XX XX  XX XX  XX  **"
+                                + "\n\t**   XX      XXX XX    XXXXXXXX XX  XX XX XX  XX  **"
+                                + "\n\t**   XX XX    XX XX    XX    XX XX    XXX XX  XX  **"
+                                + "\n\t**   XX   XXXX   XXXXX XX    XX XX     XX XXXX    **"
+                                + "\n\t**                                                **"
+                                + "\n\t**                                                **"
+                                + "\n\t****************************************************"
+                                + "\n\t****************************************************");
+            
+            
         this.promptMessage = "\nPlease enter you name: ";
         this.displayBanner();
     }
@@ -26,7 +62,13 @@ public class StartProgramView {
         System.out.println(
                  "\n****************************************************************"
                 +"\n*                                                              *"
-                +"\n The Description goes here                                     *"
+                +"\n* Your boat has crashed! You are STUCK ON AN ISLAND...         *"
+                +"\n* The only way to survive is to stay alive.                    *"
+                +"\n* Build a raft to leave the island,                            *"
+                +"\n*       but there are dangers along the way.                   *"
+                +"\n* Find resources, find wood and vines to build the raft,       *"
+                +"\n* Your choices will determine whether you live or die.         *"
+                +"\n* Get ready to take an adventure!                              *"
                 +"\n*                                                              *"
                 +"\n****************************************************************"
         );
