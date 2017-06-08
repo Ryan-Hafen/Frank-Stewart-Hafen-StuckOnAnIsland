@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -77,9 +78,13 @@ public class CollectResourceView {
     }
 
    void collectResource(String resourceAdded) {
-       
+       System.out.println("\n*** displayCollectResource() stub function called ***");
        
    }
+
+    void displayCollectResourceMenu() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

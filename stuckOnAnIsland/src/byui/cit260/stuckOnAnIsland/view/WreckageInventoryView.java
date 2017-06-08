@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -125,9 +126,8 @@ public class WreckageInventoryView implements Serializable  {
         return false;
     }
 
-   void addResource(String resourceAdded) {
-       
-       
+   void displayWrechageInventoryMenu() {
+       System.out.println("\n*** displayWrechageInventoryMenu() stub function called ***");
    }
     
 }

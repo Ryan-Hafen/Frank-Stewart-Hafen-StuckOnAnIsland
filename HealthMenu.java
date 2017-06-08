@@ -11,34 +11,31 @@ import stuckonanisland.StuckOnAnIsland;
 
 /**
  *
- * @author hafenr
+ * @author germa_000
  */
-public class MainMenuView {
+public class healthView {
     
     private String promptMessage;
     
-    public MainMenuView() {
+    public healthView() {
             
 
                 
-        this.promptMessage =      "\n****************************************************************"
-                                + "\n*  Main Menu                                                   *"
+        this.promptMessage =     "\n****************************************************************"
                                 + "\n*                                                              *"
-                                + "\n*  N - New game                                                *"
-                                + "\n*  C - Continue game                                           *"
-                                + "\n*  R - Restart game                                            *"
-                                + "\n*  H - Help                                                    *"
-                                + "\n*  Q - Quit                                                    *"
-                                + "\n*                                                              *"
-                                + "\n*  Please enter your selection:                                *"
+                                + "\nH - View Health Status "
+                                + "\nR - Restore Health "
+                                + "\nS - Save game "
+                                + "\nQ - Quit "
+                                + "\nPlease enter your selection: "
                                 + "\n*                                                              *"
                                 + "\n****************************************************************";
     }
     
-    void displayMainMenuView() {
+    void displayViewInventoryView() {
         boolean done = false; //set flag to not done
         do {
-            // promplt for and get players name
+            // prompt for and get players name
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) //user wants to quit
                 return; // exit the game
@@ -64,9 +61,10 @@ public class MainMenuView {
                 continue;
             }
             else if (value.length() > 1 ) { // value is blank
-                System.out.println("\nInvalid value: value must be N, C, R, H, or Q");
+                System.out.println("\nInvalid value: value must be V, R, B, S, or Q");
                 continue;
             }
+            
             break; // end the loop
         }
         
@@ -77,45 +75,37 @@ public class MainMenuView {
         menuOption = menuOption.toUpperCase(); //convert choice to upper case
         
         switch (menuOption) {
-            case "N": // create and start a new game
-                this.startNewGame();
+            case "H": // view health status
+                this.viewHealth();
                 break;
-            case "C": // get and start an existing game
-                this.startExistingGame();
+            case "R": // restore health
+                this.restoreHealth();
                 break;
-            case "R": //display the help menu
-                this.restartGame();
-                break;
-            case "H": // save the current game
-                this.displayHelpMenu();
+            case "S": // save the current game
+                this.saveGame();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        
         return false;
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(StuckOnAnIsland.getPlayer());
+    private void viewHealth() {
+        Health.createHealth (Health.getHealth());
         
-        // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        // display ealth status
+        HealthView viewHealth = new HealthView();
+        viewhealth.displayHealthMenu();
     }
 
-    private void startExistingGame() {
-        System.out.println("\n*** startExistingGame function called ***");
+    private void Health() {
+        System.out.println("\n*** health function called ***");
     }
 
-    private void displayHelpMenu() {
-        // display the Help menu
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
-    }
-
-    private void restartGame() {
-        System.out.println("\n*** restartGame function called ***");
+    private void saveGame() {
+        System.out.println("\n*** saveGame function called ***");
     }
     
 }

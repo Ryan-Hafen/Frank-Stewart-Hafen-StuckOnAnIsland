@@ -11,34 +11,32 @@ import stuckonanisland.StuckOnAnIsland;
 
 /**
  *
- * @author hafenr
+ * @author germa_000
  */
-public class MainMenuView {
+public class ViewInventoryView {
     
     private String promptMessage;
     
-    public MainMenuView() {
+    public ViewInventoryView() {
             
 
                 
-        this.promptMessage =      "\n****************************************************************"
-                                + "\n*  Main Menu                                                   *"
+        this.promptMessage =     "\n****************************************************************"
                                 + "\n*                                                              *"
-                                + "\n*  N - New game                                                *"
-                                + "\n*  C - Continue game                                           *"
-                                + "\n*  R - Restart game                                            *"
-                                + "\n*  H - Help                                                    *"
-                                + "\n*  Q - Quit                                                    *"
-                                + "\n*                                                              *"
-                                + "\n*  Please enter your selection:                                *"
+                                + "\nV - View Inventory "
+                                + "\nR - Quantity of Rope "
+                                + "\nB - Linear Feet of Bamboo "
+                                + "\nS - Save game "
+                                + "\nQ - Quit "
+                                + "\nPlease enter your selection: "
                                 + "\n*                                                              *"
                                 + "\n****************************************************************";
     }
     
-    void displayMainMenuView() {
+    void displayViewInventoryView() {
         boolean done = false; //set flag to not done
         do {
-            // promplt for and get players name
+            // prompt for and get players name
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q")) //user wants to quit
                 return; // exit the game
@@ -64,9 +62,10 @@ public class MainMenuView {
                 continue;
             }
             else if (value.length() > 1 ) { // value is blank
-                System.out.println("\nInvalid value: value must be N, C, R, H, or Q");
+                System.out.println("\nInvalid value: value must be V, R, B, S, or Q");
                 continue;
             }
+            
             break; // end the loop
         }
         
@@ -77,45 +76,46 @@ public class MainMenuView {
         menuOption = menuOption.toUpperCase(); //convert choice to upper case
         
         switch (menuOption) {
-            case "N": // create and start a new game
-                this.startNewGame();
+            case "V": // view inventory
+                this.viewInventory();
                 break;
-            case "C": // get and start an existing game
-                this.startExistingGame();
+            case "R": // calculate length of rope in inventory
+                this.ropeInventory();
                 break;
-            case "R": //display the help menu
-                this.restartGame();
+            case "B": // claculate length of bamboo in inventory
+                this.bambooInventory();
                 break;
-            case "H": // save the current game
-                this.displayHelpMenu();
+            case "S": // save the current game
+                this.saveGame();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
+        
         return false;
     }
 
-    private void startNewGame() {
-        GameControl.createNewGame(StuckOnAnIsland.getPlayer());
+    private void viewInventory() {
+        Inventory.createInventory (Inventory.getInventory());
         
-        // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        // display inventory list
+        ViewInventoryView viewInventory = new ViewInventoryView();
+        viewinventory.displayInventoryMenu();
     }
 
-    private void startExistingGame() {
-        System.out.println("\n*** startExistingGame function called ***");
+    private void ropeInventory() {
+        System.out.println("\n*** ropeInventory function called ***");
     }
 
-    private void displayHelpMenu() {
-        // display the Help menu
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+    private void bambooInventory {
+        // display bamboo resource
+        BambooInventoryView bambooInventoryMenu = new BambooInentoryView();
+        bambooinventoryMenu.displaybambooinventoryMenu();
     }
 
-    private void restartGame() {
-        System.out.println("\n*** restartGame function called ***");
+    private void saveGame() {
+        System.out.println("\n*** saveGame function called ***");
     }
     
 }
