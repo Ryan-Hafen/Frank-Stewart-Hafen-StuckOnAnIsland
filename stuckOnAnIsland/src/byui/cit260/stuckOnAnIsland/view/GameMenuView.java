@@ -227,7 +227,6 @@ public class GameMenuView {
     }
 
     private void displaySaveGameMenu() {
-        GameControl.saveCurrentGame(StuckOnAnIsland.getPlayer(), StuckOnAnIsland.getCurrentGame());
         // display the Save Game Menu
         SaveGameView saveGame = new SaveGameView();
         saveGame.displaySaveGameMenu();
