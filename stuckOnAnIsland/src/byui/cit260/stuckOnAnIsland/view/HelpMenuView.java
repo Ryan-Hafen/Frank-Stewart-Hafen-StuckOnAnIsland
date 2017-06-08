@@ -16,15 +16,17 @@ public class HelpMenuView {
     private String promptMessage;
     
     public HelpMenuView() {
-        this.promptMessage =     "\n****************************************************************"
+        this.promptMessage =      "\n****************************************************************"
+                                + "\n*  Help Menu                                                   *"
                                 + "\n*                                                              *"
-                                + "\nG - What is the goal of the game? "
-                                + "\nM - How to move "
-                                + "\nT - How to build tools "
-                                + "\nF - How to fix the raft "
-                                + "\nH - How to collect inventory "
-                                + "\nE - Exit to Main Menu "
-                                + "\nPlease enter your selection: "
+                                + "\n*  G - What is the goal of the game?                           *"
+                                + "\n*  M - How to move                                             *"
+                                + "\n*  T - How to build tools                                      *"
+                                + "\n*  F - How to fix the raft                                     *"
+                                + "\n*  H - How to collect inventory                                *"
+                                + "\n*  E - Exit to Main Menu                                       *"
+                                + "\n*                                                              *"
+                                + "\n*  Please enter your selection:                                *"
                                 + "\n*                                                              *"
                                 + "\n****************************************************************";
     }
@@ -62,7 +64,6 @@ public class HelpMenuView {
                 System.out.println("\nInvalid value: value must be G, M, T, F, H, or E");
                 continue;
             }
-            
             break; // end the loop
         }
         
@@ -89,9 +90,7 @@ public class HelpMenuView {
                 System.out.println("\n**** Add text for Delivering resources to warehouse ****");
                 break;
             case "E": // Exit to Main Menu
-                // display the game menu
-                MainMenuView mainMenuView = new MainMenuView();
-                mainMenuView.displayMainMenuView();
+                this.displayMainMenuView();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -99,6 +98,11 @@ public class HelpMenuView {
         }
         
         return false;
+    }
+
+    private void displayMainMenuView() {
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
     }
 
     

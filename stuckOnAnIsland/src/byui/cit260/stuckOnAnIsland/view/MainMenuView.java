@@ -21,14 +21,16 @@ public class MainMenuView {
             
 
                 
-        this.promptMessage =     "\n****************************************************************"
+        this.promptMessage =      "\n****************************************************************"
+                                + "\n*  Main Menu                                                   *"
                                 + "\n*                                                              *"
-                                + "\nN - New game "
-                                + "\nC - Continue game "
-                                + "\nR - Restart game "
-                                + "\nH - Help "
-                                + "\nQ - Quit "
-                                + "\nPlease enter your selection: "
+                                + "\n*  N - New game                                                *"
+                                + "\n*  C - Continue game                                           *"
+                                + "\n*  R - Restart game                                            *"
+                                + "\n*  H - Help                                                    *"
+                                + "\n*  Q - Quit                                                    *"
+                                + "\n*                                                              *"
+                                + "\n*  Please enter your selection:                                *"
                                 + "\n*                                                              *"
                                 + "\n****************************************************************";
     }
@@ -65,7 +67,6 @@ public class MainMenuView {
                 System.out.println("\nInvalid value: value must be N, C, R, H, or Q");
                 continue;
             }
-            
             break; // end the loop
         }
         
@@ -100,7 +101,7 @@ public class MainMenuView {
         
         // display the game menu
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.displayGameMenu();
     }
 
     private void startExistingGame() {
