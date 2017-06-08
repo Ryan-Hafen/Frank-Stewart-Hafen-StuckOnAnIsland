@@ -9,10 +9,10 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-class ViewInventoyView {
+class ViewInventoryView {
 
-    void displayViewInventoyMenu() {
-        System.out.println("\n*** displayViewInventoy() stub function called ***");
+    void displayViewInventoryMenu() {
+        System.out.println("\n*** displayViewInventory() stub function called ***");
     }
     
 }

@@ -107,7 +107,7 @@ public class GameMenuView {
                 this.displayDropResourceMenu();
                 break;
             case "I": // View inventory
-                this.displayViewInventoyMenu();
+                this.displayViewInventoryMenu();
                 break;
             case "R": // View raft status
                 this.displayViewRaftStatusMenu();
@@ -152,13 +152,13 @@ public class GameMenuView {
 
 
     private void displayBuildToolsMenu() {
-        // display the Build Tools
+        // display the Build Tools Menu
         BuildToolsView buildToolsMenu = new BuildToolsView();
         buildToolsMenu.displayBuildToolsMenu();
     }
 
     private void displayObserveHealthMenu() {
-        // display the Help menu
+        // display the Observe Health Menu
         ObserveHealthMenuView observeHealthMenu = new ObserveHealthMenuView();
         observeHealthMenu.displayObserveHealthMenu();
     }
@@ -170,61 +170,61 @@ public class GameMenuView {
     }
 
     private void displayToolsMenu() {
-        // display the Tools
+        // display the Tools Menu
         ToolsView tools = new ToolsView();
         tools.displayToolsMenu();
     }
 
     private void displayWorkOnRaftMenu() {
-        // display the Help menu
+        // display the Work On Raft Menu
         WorkOnRaftView workOnRaftMenu = new WorkOnRaftView();
         workOnRaftMenu.displayWorkOnRaftMenu();
     }
 
     private void displayCollectResourceMenu() {
-        // display the Help menu
+        // display the Collect Resource Menu
         CollectResourceView collectResource = new CollectResourceView();
         collectResource.displayCollectResourceMenu();
     }
 
     private void displayDropResourceMenu() {
-        // display the Help menu
+        // display the Drop Resource Menu
         DropResourceView dropResource = new DropResourceView();
         dropResource.displayDropResourceMenu();
     }
 
-    private void displayViewInventoyMenu() {
-        // display the Help menu
-        ViewInventoyView viewInventoy = new ViewInventoyView();
-        viewInventoy.displayViewInventoyMenu();
+    private void displayViewInventoryMenu() {
+        // display the View Inventory Menu
+        ViewInventoryView viewInventory = new ViewInventoryView();
+        viewInventory.displayViewInventoryMenu();
     }
 
     private void displayViewRaftStatusMenu() {
-        // display the Help menu
+        // display the View Raft Status Menu
         ViewRaftStatusView viewRaftStatus = new ViewRaftStatusView();
         viewRaftStatus.displayViewRaftStatusMenu();
     }
 
     private void displayExploreLocationsMenu() {
-        // display the Help menu
+        // display the Explore Locations Menu
         ExploreLocationsView exploreLocations = new ExploreLocationsView();
         exploreLocations.displayExploreLocationsMenu();
     }
 
     private void displayMoveToALocationMenu() {
-        // display the Help menu
+        // display the Move To A Location Menu
         MoveToALocationView moveToALocation = new MoveToALocationView();
         moveToALocation.displayMoveToALocationMenu();
     }
 
     private void displayCurrentLocationMenu() {
-        // display the Help menu
+        // display the Current Location Menu
         CurrentLocationView currentLocation = new CurrentLocationView();
         currentLocation.displayCurrentLocationMenu();
     }
 
     private void displaySaveGameMenu() {
-        // display the Help menu
+        // display the Save Game Menu
         SaveGameView saveGame = new SaveGameView();
         saveGame.displaySaveGameMenu();
     }
