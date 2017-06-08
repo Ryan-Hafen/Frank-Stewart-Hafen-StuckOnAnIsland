@@ -5,6 +5,9 @@
  */
 package byui.cit260.stuckOnAnIsland.view;
 
+
+import buyi.cit260.stuckOnAnIsland.control.BackpackControl;
+import stuckonanisland.StuckOnAnIsland;
 import java.util.Scanner;
 
 /**
@@ -170,6 +173,7 @@ public class GameMenuView {
     }
 
     private void displayToolsMenu() {
+        BackpackControl.getTools();
         // display the Tools Menu
         ToolsView tools = new ToolsView();
         tools.displayToolsMenu();
