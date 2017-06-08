@@ -19,11 +19,11 @@ public class HelpMenuView {
         this.promptMessage =     "\n****************************************************************"
                                 + "\n*                                                              *"
                                 + "\nG - What is the goal of the game? "
-                                + "\nM - how to move "
-                                + "\nE - Estimating the amount of resources "
-                                + "\nH - Harvesting resources "
-                                + "\nD - Build the raft "
-                                + "\nQ - Return to Main Menu "
+                                + "\nM - How to move "
+                                + "\nT - How to build tools "
+                                + "\nF - How to fix the raft "
+                                + "\nH - How to collect inventory "
+                                + "\nE - Exit to Main Menu "
                                 + "\nPlease enter your selection: "
                                 + "\n*                                                              *"
                                 + "\n****************************************************************";
@@ -59,7 +59,7 @@ public class HelpMenuView {
                 continue;
             }
             else if (value.length() > 1 ) { // value is blank
-                System.out.println("\nInvalid value: value must be G, M, E, H, D, or Q");
+                System.out.println("\nInvalid value: value must be G, M, T, F, H, or E");
                 continue;
             }
             
@@ -74,21 +74,21 @@ public class HelpMenuView {
         
         switch (helpMenuOption) {
             case "G": // What is the goal of the game? 
-                System.out.println("\n**** Add text for What is the goal of the game? ****");
+                System.out.println("\n**** Your goal is to build a raft and escape from the island before you run out of resources? ****");
                 break;
             case "M": // How to move
                 System.out.println("\n**** Add text for How to move ****");
                 break;
-            case "E": // Estimating the amount of resources
+            case "T": // How to build tools
                 System.out.println("\n**** Add text for Estimating the amount of resources ****");
                 break;
-            case "H": // Harvesting resources
+            case "F": // How to fix raft
                 System.out.println("\n**** Add text for Harvesting resources ****");
                 break;
-            case "D": // Delivering resources to warehouse
+            case "H": // How to collect inventory
                 System.out.println("\n**** Add text for Delivering resources to warehouse ****");
                 break;
-            case "Q": // Quit
+            case "E": // Exit to Main Menu
                 // display the game menu
                 MainMenuView mainMenuView = new MainMenuView();
                 mainMenuView.displayMainMenuView();
