@@ -12,7 +12,7 @@ package byui.cit260.stuckOnAnIsland.view;
 public class ToolsView {
 
     void displayTools() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** displayTools() stub function called ***");
     }
     
 }

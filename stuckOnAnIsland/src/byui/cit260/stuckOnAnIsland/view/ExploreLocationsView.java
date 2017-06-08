@@ -12,7 +12,7 @@ package byui.cit260.stuckOnAnIsland.view;
 class ExploreLocationsView {
 
     void displayExploreLocations() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** displayExploreLocations() stub function called ***");
     }
     
 }

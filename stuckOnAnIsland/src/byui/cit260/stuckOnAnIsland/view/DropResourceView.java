@@ -12,7 +12,7 @@ package byui.cit260.stuckOnAnIsland.view;
 class DropResourceView {
 
     void displayDropResource() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** displayDropResource() stub function called ***");
     }
     
 }

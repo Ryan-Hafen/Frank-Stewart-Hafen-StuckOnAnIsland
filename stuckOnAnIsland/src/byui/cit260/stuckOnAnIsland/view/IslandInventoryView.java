@@ -12,7 +12,7 @@ package byui.cit260.stuckOnAnIsland.view;
 public class IslandInventoryView {
 
     void displayIslandInventoryMenu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** displayIslandInventoryMenu() stub function called ***");
     }
     
 }

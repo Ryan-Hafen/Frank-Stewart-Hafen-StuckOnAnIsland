@@ -12,7 +12,7 @@ package byui.cit260.stuckOnAnIsland.view;
 class SaveGameView {
 
     void displaySaveGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** displaySaveGame() stub function called ***");
     }
     
 }

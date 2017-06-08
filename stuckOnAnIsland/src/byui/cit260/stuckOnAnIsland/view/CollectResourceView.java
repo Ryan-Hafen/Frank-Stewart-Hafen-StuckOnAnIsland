@@ -12,7 +12,7 @@ package byui.cit260.stuckOnAnIsland.view;
 class CollectResourceView {
 
     void displayCollectResource() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** displayCollectResource() stub function called ***");
     }
     
 }
