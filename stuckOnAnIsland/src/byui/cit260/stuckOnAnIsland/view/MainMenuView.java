@@ -23,10 +23,10 @@ public class MainMenuView {
                 
         this.promptMessage =     "\n****************************************************************"
                                 + "\n*                                                              *"
-                                + "\nN - Start new game "
-                                + "\nG - Get and start a saved game "
-                                + "\nH - Get help on how to play the game "
-                                + "\nS - Save game "
+                                + "\nN - New game "
+                                + "\nC - Continue game "
+                                + "\nR - Restart game "
+                                + "\nH - Help "
                                 + "\nQ - Quit "
                                 + "\nPlease enter your selection: "
                                 + "\n*                                                              *"
@@ -62,7 +62,7 @@ public class MainMenuView {
                 continue;
             }
             else if (value.length() > 1 ) { // value is blank
-                System.out.println("\nInvalid value: value must be N, G, H, S, or Q");
+                System.out.println("\nInvalid value: value must be N, C, R, H, or Q");
                 continue;
             }
             
@@ -79,20 +79,19 @@ public class MainMenuView {
             case "N": // create and start a new game
                 this.startNewGame();
                 break;
-            case "G": // get and start an existing game
+            case "C": // get and start an existing game
                 this.startExistingGame();
                 break;
-            case "H": //display the help menu
-                this.displayHelpMenu();
+            case "R": //display the help menu
+                this.restartGame();
                 break;
-            case "S": // save the current game
-                this.saveGame();
+            case "H": // save the current game
+                this.displayHelpMenu();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
         }
-        
         return false;
     }
 
@@ -114,8 +113,8 @@ public class MainMenuView {
         helpMenu.displayHelpMenu();
     }
 
-    private void saveGame() {
-        System.out.println("\n*** saveGame function called ***");
+    private void restartGame() {
+        System.out.println("\n*** restartGame function called ***");
     }
     
 }
