@@ -5,10 +5,15 @@
  */
 package buyi.cit260.stuckOnAnIsland.control;
 
+import stuckonanisland.StuckOnAnIsland;
 /**
  *
  * @author RyanHafen
  */
 public class BackpackControl {
+
+    public static void getTools() {
+        System.out.println("\n*** getTools() stub function called ***");
+    }
     
 }

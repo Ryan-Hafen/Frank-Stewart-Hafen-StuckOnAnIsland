@@ -17,8 +17,6 @@ public class ToolInventory implements Serializable{
 
     public ToolInventory() {
     }
-    
-    
 
     public String getDescription() {
         return description;
