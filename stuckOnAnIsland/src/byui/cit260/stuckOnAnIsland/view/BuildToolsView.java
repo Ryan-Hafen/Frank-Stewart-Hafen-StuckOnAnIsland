@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 public class BuildToolsView {
 
-    void displayBuildTools() {
+    void displayBuildToolsMenu() {
         System.out.println("\n*** displayBuildTools() stub function called ***");
     }
     

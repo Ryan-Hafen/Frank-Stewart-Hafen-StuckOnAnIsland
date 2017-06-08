@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 public class ToolsView {
 
-    void displayTools() {
+    void displayToolsMenu() {
         System.out.println("\n*** displayTools() stub function called ***");
     }
     

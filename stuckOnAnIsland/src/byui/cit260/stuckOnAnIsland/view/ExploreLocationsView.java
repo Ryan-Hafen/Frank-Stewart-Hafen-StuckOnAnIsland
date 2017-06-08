@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 class ExploreLocationsView {
 
-    void displayExploreLocations() {
+    void displayExploreLocationsMenu() {
         System.out.println("\n*** displayExploreLocations() stub function called ***");
     }
     

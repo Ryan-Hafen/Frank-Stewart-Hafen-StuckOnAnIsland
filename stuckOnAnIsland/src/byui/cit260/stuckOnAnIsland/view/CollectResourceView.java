@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 class CollectResourceView {
 
-    void displayCollectResource() {
+    void displayCollectResourceMenu() {
         System.out.println("\n*** displayCollectResource() stub function called ***");
     }
     

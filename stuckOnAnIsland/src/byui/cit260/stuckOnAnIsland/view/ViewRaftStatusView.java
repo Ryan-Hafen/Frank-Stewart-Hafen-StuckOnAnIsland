@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 class ViewRaftStatusView {
 
-    void displayViewRaftStatus() {
+    void displayViewRaftStatusMenu() {
         System.out.println("\n*** displayViewRaftStatus() stub function called ***");
     }
     

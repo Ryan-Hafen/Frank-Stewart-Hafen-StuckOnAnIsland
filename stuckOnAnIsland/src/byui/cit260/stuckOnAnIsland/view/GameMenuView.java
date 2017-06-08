@@ -92,40 +92,40 @@ public class GameMenuView {
                 this.displayIslandInventoryMenu();
                 break;
             case "D": // Display tools
-                this.displayTools();
+                this.displayToolsMenu();
                 break;
             case "B": // Build tools
-                this.displayBuildTools();
+                this.displayBuildToolsMenu();
                 break;
             case "W": // Work on raft
-                this.displayWorkOnRaft();
+                this.displayWorkOnRaftMenu();
                 break;
             case "C": // Collect resource
-                this.displayCollectResource();
+                this.displayCollectResourceMenu();
                 break;
             case "X": // Drop resource
-                this.displayDropResource();
+                this.displayDropResourceMenu();
                 break;
             case "I": // View inventory
-                this.displayViewInventoy();
+                this.displayViewInventoyMenu();
                 break;
             case "R": // View raft status
-                this.displayViewRaftStatus();
+                this.displayViewRaftStatusMenu();
                 break;
             case "O": // Observe health menu
                 this.displayObserveHealthMenu();
                 break;
             case "E": // Explore locations
-                this.displayExploreLocations();
+                this.displayExploreLocationsMenu();
                 break;
             case "M": // Move to a location
-                this.displayMoveToALocation();
+                this.displayMoveToALocationMenu();
                 break;
             case "L": // Display current location
-                this.displayCurrentLocation();
+                this.displayCurrentLocationMenu();
                 break;
             case "S": // Save game
-                this.displaySaveGame();
+                this.displaySaveGameMenu();
                 break;
             case "H": // Help menu
                 this.displayHelpMenu();
@@ -150,46 +150,11 @@ public class GameMenuView {
         islandInventoryMenu.displayIslandInventoryMenu();
     }
 
-    private void displayTools() {
-        // display the Tools
-        ToolsView tools = new ToolsView();
-        tools.displayTools();
-    }
 
-    private void displayBuildTools() {
+    private void displayBuildToolsMenu() {
         // display the Build Tools
-        BuildToolsView buildTools = new BuildToolsView();
-        buildTools.displayBuildTools();
-    }
-
-    private void displayWorkOnRaft() {
-        // display the Help menu
-        WorkOnRaftView workOnRaftMenu = new WorkOnRaftView();
-        workOnRaftMenu.displayWorkOnRaftMenu();
-    }
-
-    private void displayCollectResource() {
-        // display the Help menu
-        CollectResourceView collectResource = new CollectResourceView();
-        collectResource.displayCollectResource();
-    }
-
-    private void displayDropResource() {
-        // display the Help menu
-        DropResourceView dropResource = new DropResourceView();
-        dropResource.displayDropResource();
-    }
-
-    private void displayViewInventoy() {
-        // display the Help menu
-        ViewInventoyView viewInventoy = new ViewInventoyView();
-        viewInventoy.displayViewInventoy();
-    }
-
-    private void displayViewRaftStatus() {
-        // display the Help menu
-        ViewRaftStatusView viewRaftStatus = new ViewRaftStatusView();
-        viewRaftStatus.displayViewRaftStatus();
+        BuildToolsView buildToolsMenu = new BuildToolsView();
+        buildToolsMenu.displayBuildToolsMenu();
     }
 
     private void displayObserveHealthMenu() {
@@ -198,34 +163,70 @@ public class GameMenuView {
         observeHealthMenu.displayObserveHealthMenu();
     }
 
-    private void displayExploreLocations() {
-        // display the Help menu
-        ExploreLocationsView exploreLocations = new ExploreLocationsView();
-        exploreLocations.displayExploreLocations();
-    }
-
-    private void displayMoveToALocation() {
-        // display the Help menu
-        MoveToALocationView moveToALocation = new MoveToALocationView();
-        moveToALocation.displayMoveToALocation();
-    }
-
-    private void displayCurrentLocation() {
-        // display the Help menu
-        CurrentLocationView currentLocation = new CurrentLocationView();
-        currentLocation.displayCurrentLocation();
-    }
-
-    private void displaySaveGame() {
-        // display the Help menu
-        SaveGameView saveGame = new SaveGameView();
-        saveGame.displaySaveGame();
-    }
-
     private void displayHelpMenu() {
         // display the Help menu
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.displayHelpMenu();
+    }
+
+    private void displayToolsMenu() {
+        // display the Tools
+        ToolsView tools = new ToolsView();
+        tools.displayToolsMenu();
+    }
+
+    private void displayWorkOnRaftMenu() {
+        // display the Help menu
+        WorkOnRaftView workOnRaftMenu = new WorkOnRaftView();
+        workOnRaftMenu.displayWorkOnRaftMenu();
+    }
+
+    private void displayCollectResourceMenu() {
+        // display the Help menu
+        CollectResourceView collectResource = new CollectResourceView();
+        collectResource.displayCollectResourceMenu();
+    }
+
+    private void displayDropResourceMenu() {
+        // display the Help menu
+        DropResourceView dropResource = new DropResourceView();
+        dropResource.displayDropResourceMenu();
+    }
+
+    private void displayViewInventoyMenu() {
+        // display the Help menu
+        ViewInventoyView viewInventoy = new ViewInventoyView();
+        viewInventoy.displayViewInventoyMenu();
+    }
+
+    private void displayViewRaftStatusMenu() {
+        // display the Help menu
+        ViewRaftStatusView viewRaftStatus = new ViewRaftStatusView();
+        viewRaftStatus.displayViewRaftStatusMenu();
+    }
+
+    private void displayExploreLocationsMenu() {
+        // display the Help menu
+        ExploreLocationsView exploreLocations = new ExploreLocationsView();
+        exploreLocations.displayExploreLocationsMenu();
+    }
+
+    private void displayMoveToALocationMenu() {
+        // display the Help menu
+        MoveToALocationView moveToALocation = new MoveToALocationView();
+        moveToALocation.displayMoveToALocationMenu();
+    }
+
+    private void displayCurrentLocationMenu() {
+        // display the Help menu
+        CurrentLocationView currentLocation = new CurrentLocationView();
+        currentLocation.displayCurrentLocationMenu();
+    }
+
+    private void displaySaveGameMenu() {
+        // display the Help menu
+        SaveGameView saveGame = new SaveGameView();
+        saveGame.displaySaveGameMenu();
     }
 
     

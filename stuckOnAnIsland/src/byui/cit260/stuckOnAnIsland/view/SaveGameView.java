@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 class SaveGameView {
 
-    void displaySaveGame() {
+    void displaySaveGameMenu() {
         System.out.println("\n*** displaySaveGame() stub function called ***");
     }
     

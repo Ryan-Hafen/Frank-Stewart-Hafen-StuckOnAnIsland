@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 class ViewInventoyView {
 
-    void displayViewInventoy() {
+    void displayViewInventoyMenu() {
         System.out.println("\n*** displayViewInventoy() stub function called ***");
     }
     

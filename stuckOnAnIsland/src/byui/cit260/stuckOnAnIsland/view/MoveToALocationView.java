@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 class MoveToALocationView {
 
-    void displayMoveToALocation() {
+    void displayMoveToALocationMenu() {
         System.out.println("\n*** displayMoveToALocation() stub function called ***");
     }
     

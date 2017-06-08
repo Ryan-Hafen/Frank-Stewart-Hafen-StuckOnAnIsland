@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 class CurrentLocationView {
 
-    void displayCurrentLocation() {
+    void displayCurrentLocationMenu() {
         System.out.println("\n*** displayCurrentLocation() stub function called ***");
     }
     

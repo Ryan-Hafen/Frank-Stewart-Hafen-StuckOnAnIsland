@@ -11,7 +11,7 @@ package byui.cit260.stuckOnAnIsland.view;
  */
 class DropResourceView {
 
-    void displayDropResource() {
+    void displayDropResourceMenu() {
         System.out.println("\n*** displayDropResource() stub function called ***");
     }
     
