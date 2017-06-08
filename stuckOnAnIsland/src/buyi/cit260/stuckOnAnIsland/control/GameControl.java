@@ -5,6 +5,7 @@
  */
 package buyi.cit260.stuckOnAnIsland.control;
 
+import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Player;
 import stuckonanisland.StuckOnAnIsland;
 
@@ -31,6 +32,10 @@ public class GameControl {
 
     public static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame sub function called ***");
+    }
+
+    public static void saveCurrentGame(Player player, Game currentGame) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
