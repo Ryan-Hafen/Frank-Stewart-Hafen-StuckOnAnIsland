@@ -33,5 +33,9 @@ public class GameControl {
     public static void createNewGame(Player player) {
         System.out.println("\n*** createNewGame sub function called ***");
     }
+
+    public static void createHealth() {
+        System.out.println("\n*** createHealth sub function called ***");
+    }
     
 }

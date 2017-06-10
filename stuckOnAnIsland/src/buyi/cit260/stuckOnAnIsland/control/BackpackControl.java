@@ -15,5 +15,9 @@ public class BackpackControl {
     public static void getTools() {
         System.out.println("\n*** getTools() stub function called ***");
     }
+
+    public static void createInventory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
