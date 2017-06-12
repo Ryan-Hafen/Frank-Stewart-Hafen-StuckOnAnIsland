@@ -48,8 +48,9 @@ public class StuckOnAnIsland {
     public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
-        startProgramView.displayStartProgramView();
-        
+// ******* removed when implemented view super class *******  
+//        startProgramView.displayStartProgramView();
+          startProgramView.display();
         
 //        //Actor Class
 //        Actor actorOne = new Actor();

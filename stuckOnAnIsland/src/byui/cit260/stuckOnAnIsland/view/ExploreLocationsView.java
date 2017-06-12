@@ -9,10 +9,18 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-class ExploreLocationsView {
-
-    void displayExploreLocationsMenu() {
-        System.out.println("\n*** displayExploreLocations() stub function called ***");
-    }
+class ExploreLocationsView extends View{
     
-}
+//    private String promptMessage;
+    
+    public ExploreLocationsView() {
+//        this.promptMessage =    
+        super( "\\n*** displayWorkOnRaftMenu() stub function called ***"
+        );
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+}  

@@ -9,10 +9,18 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-class CurrentLocationView {
-
-    void displayCurrentLocationMenu() {
-        System.out.println("\n*** displayCurrentLocation() stub function called ***");
-    }
+class CurrentLocationView extends View{
     
-}
+//    private String promptMessage;
+    
+    public CurrentLocationView() {
+//        this.promptMessage =    
+        super( "\\n*** CurrentLocationView() stub function called ***"
+        );
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+}  

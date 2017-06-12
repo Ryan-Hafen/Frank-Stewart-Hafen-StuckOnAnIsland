@@ -15,79 +15,81 @@ import java.util.Scanner;
  * @author hafenr
  */
 
-public class GameMenuView {
+public class GameMenuView extends View{
     
-    private String promptMessage;
+//    private String promptMessage;
     
     public GameMenuView() {
-        this.promptMessage =      "\n****************************************************************"
-                                + "\n*  Game Play Menu                                              *"
-                                + "\n*    This menu will help you navigate through the game.        *"
-                                + "\n*                                                              *"
-                                + "\n*  J - Wreckage inventory menu                                 *"
-                                + "\n*  K - Island inventory menu                                   *"
-                                + "\n*  D - Display tools                                           *"
-                                + "\n*  B - Build tools                                             *"
-                                + "\n*  W - Work on raft                                            *"
-                                + "\n*  C - Collect resource                                        *" 
-                                + "\n*  X - Drop resource                                           *"
-                                + "\n*  I - View inventory                                          *"
-                                + "\n*  R - View raft status                                        *"
-                                + "\n*  O - Observe health menu                                     *"
-                                + "\n*  E - Explore locations                                       *"
-                                + "\n*  M - Move to a location                                      *"
-                                + "\n*  L - Display current location                                *"
-                                + "\n*  S - Save game                                               *"
-                                + "\n*  H - Help menu                                               *"
-                                + "\n*  Q - Quit                                                    *"
-                                + "\n*                                                              *"
-                                + "\n*  Please enter your selection:                                *"
-                                + "\n*                                                              *"
-                                + "\n****************************************************************";
+//        this.promptMessage =
+        super( "\n****************************************************************"
+             + "\n*  Game Play Menu                                              *"
+             + "\n*    This menu will help you navigate through the game.        *"
+             + "\n*                                                              *"
+             + "\n*  J - Wreckage inventory menu                                 *"
+             + "\n*  K - Island inventory menu                                   *"
+             + "\n*  D - Display tools                                           *"
+             + "\n*  B - Build tools                                             *"
+             + "\n*  W - Work on raft                                            *"
+             + "\n*  C - Collect resource                                        *" 
+             + "\n*  X - Drop resource                                           *"
+             + "\n*  I - View inventory                                          *"
+             + "\n*  R - View raft status                                        *"
+             + "\n*  O - Observe health menu                                     *"
+             + "\n*  E - Explore locations                                       *"
+             + "\n*  M - Move to a location                                      *"
+             + "\n*  L - Display current location                                *"
+             + "\n*  S - Save game                                               *"
+             + "\n*  H - Help menu                                               *"
+             + "\n*  Q - Quit                                                    *"
+             + "\n*                                                              *"
+             + "\n*  Please enter your selection:                                *"
+             + "\n*                                                              *"
+             + "\n****************************************************************"
+        );
     }
 
-    void displayGameMenu() {
-        boolean done = false; //set flag to not done
-        do {
-            // promplt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
-                return; // exit the game
-            
-            // do the requested action and dispaly the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
+//    void displayGameMenu() {
+//        boolean done = false; //set flag to not done
+//        do {
+//            // promplt for and get players name
+//            String menuOption = this.getMenuOption();
+//            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
+//                return; // exit the game
+//            
+//            // do the requested action and dispaly the next view
+//            done = this.doAction(menuOption);
+//        } while (!done);
+//    }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leadnig and trailing blanks
-            
-            if (value.length() < 1 ) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            else if (value.length() > 1 ) { // value is blank
-                System.out.println("\nInvalid value: value must be J, K, D, B, W, C, X, I, R, O, E, M, L, S, H, or Q");
-                continue;
-            }
-            break; // end the loop
-        }
-        
-        return value; // return the value entered
-    }
+//    private String getMenuOption() {
+//        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+//        String value = ""; // value to be returned
+//        boolean valid = false; // initialize to not valid
+//        
+//        while (!valid) {
+//            System.out.println("\n" + this.promptMessage);
+//            
+//            value = keyboard.nextLine(); // get next line typed on keyboard
+//            value = value.trim(); // trim off leadnig and trailing blanks
+//            
+//            if (value.length() < 1 ) { // value is blank
+//                System.out.println("\nInvalid value: value can not be blank");
+//                continue;
+//            }
+//            else if (value.length() > 1 ) { // value is blank
+//                System.out.println("\nInvalid value: value must be J, K, D, B, W, C, X, I, R, O, E, M, L, S, H, or Q");
+//                continue;
+//            }
+//            break; // end the loop
+//        }
+//        
+//        return value; // return the value entered
+//    }
 
-    private boolean doAction(String helpMenuOption) {
-        helpMenuOption = helpMenuOption.toUpperCase(); //convert choice to upper case
+    public boolean doAction(String value) {
+        value = value.toUpperCase(); //convert choice to upper case
         
-        switch (helpMenuOption) {
+        switch (value) {
             case "J": // Wreckage inventory menu
                 this.displayWreckageInventoryMenu();
                 break;
@@ -144,91 +146,91 @@ public class GameMenuView {
     private void displayWreckageInventoryMenu() {
         // display the Wreckage Inventory Menu
         WreckageInventoryView wrechageInventoryMenu = new WreckageInventoryView();
-        wrechageInventoryMenu.displayWrechageInventoryMenu();
+        wrechageInventoryMenu.display();
     }
 
     private void displayIslandInventoryMenu() {
         // display the Island Inventory Menu
         IslandInventoryView islandInventoryMenu = new IslandInventoryView();
-        islandInventoryMenu.displayIslandInventoryMenu();
+        islandInventoryMenu.display();
     }
 
 
     private void displayBuildToolsMenu() {
         // display the Build Tools Menu
         BuildToolsView buildToolsMenu = new BuildToolsView();
-        buildToolsMenu.displayBuildToolsMenu();
+        buildToolsMenu.display();
     }
 
     private void displayObserveHealthMenu() {
         // display the Observe Health Menu
         ObserveHealthMenuView observeHealthMenu = new ObserveHealthMenuView();
-        observeHealthMenu.displayObserveHealthMenu();
+        observeHealthMenu.display();
     }
 
     private void displayHelpMenu() {
         // display the Help menu
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenu();
+        helpMenu.display();
     }
 
     private void displayToolsMenu() {
         // display the Tools Menu
         ToolsView tools = new ToolsView();
-        tools.displayToolsMenu();
+        tools.display();
     }
 
     private void displayWorkOnRaftMenu() {
         // display the Work On Raft Menu
         WorkOnRaftView workOnRaftMenu = new WorkOnRaftView();
-        workOnRaftMenu.displayWorkOnRaftMenu();
+        workOnRaftMenu.display();
     }
 
     private void displayCollectResourceMenu() {
         // display the Collect Resource Menu
         CollectResourceView collectResource = new CollectResourceView();
-        collectResource.displayCollectResourceMenu();
+        collectResource.display();
     }
 
     private void displayDropResourceMenu() {
         // display the Drop Resource Menu
         DropResourceView dropResource = new DropResourceView();
-        dropResource.displayDropResourceMenu();
+        dropResource.display();
     }
 
     private void displayViewInventoryMenu() {
         // display the View Inventory Menu
         ViewInventoryView viewInventory = new ViewInventoryView();
-        viewInventory.displayViewInventoryMenu();
+        viewInventory.display();
     }
 
     private void displayViewRaftStatusMenu() {
         // display the View Raft Status Menu
         ViewRaftStatusView viewRaftStatus = new ViewRaftStatusView();
-        viewRaftStatus.displayViewRaftStatusMenu();
+        viewRaftStatus.display();
     }
 
     private void displayExploreLocationsMenu() {
         // display the Explore Locations Menu
         ExploreLocationsView exploreLocations = new ExploreLocationsView();
-        exploreLocations.displayExploreLocationsMenu();
+        exploreLocations.display();
     }
 
     private void displayMoveToALocationMenu() {
         // display the Move To A Location Menu
         MoveToALocationView moveToALocation = new MoveToALocationView();
-        moveToALocation.displayMoveToALocationMenu();
+        moveToALocation.display();
     }
 
     private void displayCurrentLocationMenu() {
         // display the Current Location Menu
         CurrentLocationView currentLocation = new CurrentLocationView();
-        currentLocation.displayCurrentLocationMenu();
+        currentLocation.display();
     }
 
     private void displaySaveGameMenu() {
         // display the Save Game Menu
         SaveGameView saveGame = new SaveGameView();
-        saveGame.displaySaveGameMenu();
+        saveGame.display();
     }
 }

@@ -16,76 +16,78 @@ import stuckonanisland.StuckOnAnIsland;
  *
  * @author Adam Frank
  */
-public class WreckageInventoryView implements Serializable  {
+public class WreckageInventoryView extends View  {
     
-    private String promptMessage;
+//    private String promptMessage;
     
     public WreckageInventoryView() {
-            
-
-                
-        this.promptMessage =     "\n****************************************************************"
-                                + "\n*                                                              *"
-                                + "\nC - Canned Food "
-                                + "\nW - Bottle of Water "
-                                + "\nL - Lighter "
-                                + "\nF - Flashlight "
-                                + "\nM - Multi-tool "
-                                + "\nD - Dry Food "
-                                + "\nK - Knife "
-                                + "\nH - Fishing Hooks "
-                                + "\nT - Tarp "
-                                + "\nP - Buckets "
-                                + "\nQ - Quit "
-                                + "\nPlease enter your selection: "
-                                + "\n*                                                              *"
-                                + "\n****************************************************************";
+//        this.promptMessage =
+          super( "\n********************************************************"
+               + "\n*  Wreckage Inventory Menu                             *"
+               + "\n*                                                      *"
+               + "\n*  C - Canned Food                                     *"
+               + "\n*  W - Bottle of Water                                 *"
+               + "\n*  L - Lighter                                         *"
+               + "\n*  F - Flashlight                                      *"
+               + "\n*  M - Multi-tool                                      *"
+               + "\n*  D - Dry Food                                        *"
+               + "\n*  K - Knife                                           *"
+               + "\n*  H - Fishing Hooks                                   *"
+               + "\n*  T - Tarp                                            *"
+               + "\n*  P - Buckets                                         *"
+               + "\n*  Q - Quit                                            *"
+               + "\n*  Please enter your selection:                        *"
+               + "\n*                                                      *"
+               + "\n********************************************************"
+          );
     }
-    
-    void displayMainMenuView() {
-        boolean done = false; //set flag to not done
-        do {
-            // promplt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to quit the wreckage menu
-                return; // exit the game
-            
-            // do the requested action and dispaly the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
+// ******* removed when implemented view super class *******     
+//    void displayMainMenuView() {
+//        boolean done = false; //set flag to not done
+//        do {
+//            // promplt for and get players name
+//            String menuOption = this.getMenuOption();
+//            if (menuOption.toUpperCase().equals("Q")) //user wants to quit the wreckage menu
+//                return; // exit the game
+//            
+//            // do the requested action and dispaly the next view
+//            done = this.doAction(menuOption);
+//        } while (!done);
+//    }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leadnig and trailing blanks
-            
-            if (value.length() < 1 ) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            else if (value.length() > 1 ) { // value is blank
-                System.out.println("\nInvalid value: value must be C, W, L, F, M, D, K, H, T, P, or Q");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        
-        return value; // return the value entered
-    }
+// ******* removed when implemented view super class *******     
+//    private String getMenuOption() {
+//        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+//        String value = ""; // value to be returned
+//        boolean valid = false; // initialize to not valid
+//        
+//        while (!valid) {
+//            System.out.println("\n" + this.promptMessage);
+//            
+//            value = keyboard.nextLine(); // get next line typed on keyboard
+//            value = value.trim(); // trim off leadnig and trailing blanks
+//            
+//            if (value.length() < 1 ) { // value is blank
+//                System.out.println("\nInvalid value: value can not be blank");
+//                continue;
+//            }
+//            else if (value.length() > 1 ) { // value is blank
+//                System.out.println("\nInvalid value: value must be C, W, L, F, M, D, K, H, T, P, or Q");
+//                continue;
+//            }
+//            
+//            break; // end the loop
+//        }
+//        
+//        return value; // return the value entered
+//    }
 
-    private boolean doAction(String menuOption) {
-        menuOption = menuOption.toUpperCase(); //convert choice to upper case
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase(); //convert choice to upper case
         
         
-        switch (menuOption) {
+        switch (value) {
             case "C": // pick up canned food
                 System.out.println("you picked up canned food");
                 break;

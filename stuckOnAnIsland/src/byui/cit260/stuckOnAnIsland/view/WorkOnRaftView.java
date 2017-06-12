@@ -9,10 +9,19 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-public class WorkOnRaftView {
-
-    void displayWorkOnRaftMenu() {
-        System.out.println("\n*** displayWorkOnRaftMenu() stub function called ***");
-    }
+public class WorkOnRaftView extends View{
     
-}
+//    private String promptMessage;
+    
+    public WorkOnRaftView() {
+//        this.promptMessage =    
+        super( "\\n*** displayWorkOnRaftMenu() stub function called ***"
+        );
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+}  
+

@@ -9,10 +9,18 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-class DropResourceView {
-
-    void displayDropResourceMenu() {
-        System.out.println("\n*** displayDropResource() stub function called ***");
-    }
+class DropResourceView extends View{
     
-}
+//    private String promptMessage;
+    
+    public DropResourceView() {
+//        this.promptMessage =    
+        super( "\\n*** DropResourceView() stub function called ***"
+        );
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+}  

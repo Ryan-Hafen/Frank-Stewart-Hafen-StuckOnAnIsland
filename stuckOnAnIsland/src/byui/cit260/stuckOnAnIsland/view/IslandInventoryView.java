@@ -9,10 +9,18 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-public class IslandInventoryView {
-
-    void displayIslandInventoryMenu() {
-        System.out.println("\n*** displayIslandInventoryMenu() stub function called ***");
-    }
+public class IslandInventoryView extends View{
     
-}
+//    private String promptMessage;
+    
+    public IslandInventoryView() {
+//        this.promptMessage =    
+        super( "\\n*** IslandInventoryView() stub function called ***"
+        );
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+}  

@@ -31,68 +31,69 @@ import stuckonanisland.StuckOnAnIsland;
  *
  * @author germa_000
  */
-public class ObserveHealthMenuView {
+public class ObserveHealthMenuView extends View{
     
-    private String promptMessage;
+//    private String promptMessage;
     
     public ObserveHealthMenuView() {
-            
-
-                
-        this.promptMessage =     "\n****************************************************************"
-                                + "\n*                                                              *"
-                                + "\nH - View Health Status "
-                                + "\nR - Restore Health "
-                                + "\nS - Save game "
-                                + "\nQ - Quit "
-                                + "\nPlease enter your selection: "
-                                + "\n*                                                              *"
-                                + "\n****************************************************************";
+//        this.promptMessage =     
+        super("\n********************************************************"
+             + "\n*  Health Menu                                        *"
+             + "\n*                                                     *"
+             + "\n*  H - View Health Status                             *"
+             + "\n*  R - Restore Health                                 *"
+             + "\n*  S - Save game                                      *"
+             + "\n*  Q - Quit                                           *"
+             + "\n*  Please enter your selection:                       *"
+             + "\n*                                                     *"
+             + "\n*******************************************************"
+        );
     }
     
-    void displayObserveHealthMenu() {
-        boolean done = false; //set flag to not done
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
-                return; // exit the game
-            
-            // do the requested action and dispaly the next view
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
+//    void displayObserveHealthMenu() {
+//        boolean done = false; //set flag to not done
+//        do {
+//            // prompt for and get players name
+//            String menuOption = this.getMenuOption();
+//            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
+//                return; // exit the game
+//            
+//            // do the requested action and dispaly the next view
+//            done = this.doAction(menuOption);
+//        } while (!done);
+//    }
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-        
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leadnig and trailing blanks
-            
-            if (value.length() < 1 ) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-            else if (value.length() > 1 ) { // value is blank
-                System.out.println("\nInvalid value: value must be V, R, B, S, or Q");
-                continue;
-            }
-            
-            break; // end the loop
-        }
-        
-        return value; // return the value entered
-    }
+//    private String getMenuOption() {
+//        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+//        String value = ""; // value to be returned
+//        boolean valid = false; // initialize to not valid
+//        
+//        while (!valid) {
+//            System.out.println("\n" + this.promptMessage);
+//            
+//            value = keyboard.nextLine(); // get next line typed on keyboard
+//            value = value.trim(); // trim off leadnig and trailing blanks
+//            
+//            if (value.length() < 1 ) { // value is blank
+//                System.out.println("\nInvalid value: value can not be blank");
+//                continue;
+//            }
+//            else if (value.length() > 1 ) { // value is blank
+//                System.out.println("\nInvalid value: value must be V, R, B, S, or Q");
+//                continue;
+//            }
+//            
+//            break; // end the loop
+//        }
+//        
+//        return value; // return the value entered
+//    }
 
-    private boolean doAction(String menuOption) {
-        menuOption = menuOption.toUpperCase(); //convert choice to upper case
+    @Override
+    public boolean doAction(String value) {
+        value = value.toUpperCase(); //convert choice to upper case
         
-        switch (menuOption) {
+        switch (value) {
             case "H": // view health status
                 this.viewHealth();
                 break;
@@ -115,7 +116,7 @@ public class ObserveHealthMenuView {
         
         // display ealth status
         HealthView viewHealth = new HealthView();
-        viewHealth.displayCurrentHealth();
+        viewHealth.display();
     }
 
     private void saveGame() {

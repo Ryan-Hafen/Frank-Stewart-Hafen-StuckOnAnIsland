@@ -9,10 +9,18 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-class ViewRaftStatusView {
-
-    void displayViewRaftStatusMenu() {
-        System.out.println("\n*** displayViewRaftStatus() stub function called ***");
-    }
+class ViewRaftStatusView  extends View{
     
-}
+//    private String promptMessage;
+    
+    public ViewRaftStatusView() {
+//        this.promptMessage =    
+        super( "\\n*** displayWorkOnRaftMenu() stub function called ***"
+        );
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+}  

@@ -9,10 +9,18 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-class HealthView {
-
-    void displayCurrentHealth() {
-        System.out.println("\n*** displayCurrentHealth function called ***");
-    }
+class HealthView extends View{
     
-}
+//    private String promptMessage;
+    
+    public HealthView() {
+//        this.promptMessage =    
+        super( "\\n*** HealthView() stub function called ***"
+        );
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+}  

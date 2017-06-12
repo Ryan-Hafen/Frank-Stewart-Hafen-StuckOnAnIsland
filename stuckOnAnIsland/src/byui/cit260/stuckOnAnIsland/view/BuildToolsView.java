@@ -9,10 +9,18 @@ package byui.cit260.stuckOnAnIsland.view;
  *
  * @author RyanHafen
  */
-public class BuildToolsView {
-
-    void displayBuildToolsMenu() {
-        System.out.println("\n*** displayBuildTools() stub function called ***");
-    }
+public class BuildToolsView extends View{
     
-}
+//    private String promptMessage;
+    
+    public BuildToolsView() {
+//        this.promptMessage =    
+        super( "\\n*** BuildToolsView() stub function called ***"
+        );
+    }
+
+    @Override
+    public boolean doAction(String value) {
+        return false;
+    }
+}  
