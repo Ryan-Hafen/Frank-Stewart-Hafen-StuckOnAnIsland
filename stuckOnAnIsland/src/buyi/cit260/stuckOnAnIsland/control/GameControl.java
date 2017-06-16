@@ -37,5 +37,16 @@ public class GameControl {
     public static void createHealth() {
         System.out.println("\n*** createHealth sub function called ***");
     }
+
+    public static void createSaveGame(Player player, Game currentGame) {
+        if (player == null) {
+            return;
+        }else if (currentGame == null) {
+            return;
+        }else {
+            System.out.println("\n*** createSaveGame sub function called ***");
+        }
+    }
+
     
 }
