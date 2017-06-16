@@ -5,6 +5,8 @@
  */
 package byui.cit260.stuckOnAnIsland.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Adam Frank
@@ -21,6 +23,8 @@ class DropResourceView extends View{
 
     @Override
     public boolean doAction(String value) {
+        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+//        String value = ""; // value to be returned
          value = value.toUpperCase(); //convert choice to upper case
          
          switch(value) {
