@@ -7,12 +7,13 @@ package byui.cit260.stuckOnAnIsland.view;
 
 import buyi.cit260.stuckOnAnIsland.control.BackpackControl;
 import buyi.cit260.stuckOnAnIsland.control.GameControl;
+import byui.cit260.stuckOnAnIsland.model.Backpack;
 import java.util.Scanner;
 import stuckonanisland.StuckOnAnIsland;
 
 /**
  *
- * @author germa_000
+ * @author Adam Frank
  */
 public class ViewInventoryView extends View{
     
@@ -102,10 +103,23 @@ public class ViewInventoryView extends View{
         return false;
     }
 
+    //Adam's individual assignment array
     private void viewInventory() {
-        System.out.println("\n*** viewInventory function called ***");
+        //System.out.println("\n*** viewInventory function called ***");
+        String[] backPackList = {"Flashlight", "Bottle of Water", "Knife"};
+        listBackPackItems(backPackList);
     }
 
+    private void listBackPackItems(String[] backPackList) {
+        int i = 1;
+        for (String lists : backPackList) {
+            System.out.println("List item #" + i + " is: " + backPackList[i-1]);
+            i++;
+    }
+        System.out.println("You have " + (i-1) + " items in your backpack!");
+    }
+
+    
     private void ropeInventory() {
         System.out.println("\n*** ropeInventory function called ***");
     }
