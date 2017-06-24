@@ -8,6 +8,7 @@ package byui.cit260.stuckOnAnIsland.view;
 import buyi.cit260.stuckOnAnIsland.control.BackpackControl;
 import buyi.cit260.stuckOnAnIsland.control.GameControl;
 import byui.cit260.stuckOnAnIsland.model.Backpack;
+import java.util.ArrayList;
 import java.util.Scanner;
 import stuckonanisland.StuckOnAnIsland;
 
@@ -109,7 +110,6 @@ public class ViewInventoryView extends View{
         String[] backPackList = {"Flashlight", "Bottle of Water", "Knife"};
         listBackPackItems(backPackList);
     }
-
     private void listBackPackItems(String[] backPackList) {
         int i = 1;
         for (String lists : backPackList) {
@@ -118,7 +118,7 @@ public class ViewInventoryView extends View{
     }
         System.out.println("You have " + (i-1) + " items in your backpack!");
     }
-
+    
     
     private void ropeInventory() {
         System.out.println("\n*** ropeInventory function called ***");
@@ -130,6 +130,12 @@ public class ViewInventoryView extends View{
 
     private void saveGame() {
         System.out.println("\n*** saveGame function called ***");
+    }
+
+    private static class Resource {
+
+        public Resource(String knife) {
+        }
     }
     
 }
