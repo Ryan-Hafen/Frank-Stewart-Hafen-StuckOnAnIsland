@@ -5,9 +5,11 @@
  */
 package buyi.cit260.stuckOnAnIsland.control;
 
+import buyi.cit260.stuckOnAnIsland.control.MapControl.SceneType;
 import byui.cit260.stuckOnAnIsland.model.Backpack;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.IslandInventory;
+import byui.cit260.stuckOnAnIsland.model.Location;
 import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.Player;
 import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
@@ -76,7 +78,89 @@ public class GameControl {
     }
 
     static void assignScenesToLocations(Map map, Scene[] scenes) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Location[][] locations = map.getLocations();
+        
+        locations[0][0].setScene(scenes[SceneType.wreckage.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.reef.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.beach1.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.beach2.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[0][5].setScene(scenes[SceneType.beach3.ordinal()]);
+        locations[0][6].setScene(scenes[SceneType.beach4.ordinal()]);
+        locations[0][7].setScene(scenes[SceneType.bambo2.ordinal()]);
+        locations[0][8].setScene(scenes[SceneType.cave.ordinal()]);
+        locations[1][0].setScene(scenes[SceneType.jungle2.ordinal()]);
+        locations[1][1].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[1][3].setScene(scenes[SceneType.beach1.ordinal()]);
+        locations[1][4].setScene(scenes[SceneType.bambo3.ordinal()]);
+        locations[1][5].setScene(scenes[SceneType.jungle1.ordinal()]);
+        locations[1][6].setScene(scenes[SceneType.reef.ordinal()]);
+        locations[1][7].setScene(scenes[SceneType.beach1.ordinal()]);
+        locations[1][8].setScene(scenes[SceneType.beach2.ordinal()]);
+        locations[2][0].setScene(scenes[SceneType.beach4.ordinal()]);
+        locations[2][1].setScene(scenes[SceneType.beach3.ordinal()]);
+        locations[2][2].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.cave.ordinal()]);
+        locations[2][4].setScene(scenes[SceneType.beach2.ordinal()]);
+        locations[2][5].setScene(scenes[SceneType.mountain.ordinal()]);
+        locations[2][6].setScene(scenes[SceneType.bambo2.ordinal()]);
+        locations[2][7].setScene(scenes[SceneType.jungle2.ordinal()]);
+        locations[2][8].setScene(scenes[SceneType.bambo3.ordinal()]);
+        locations[3][0].setScene(scenes[SceneType.beach3.ordinal()]);
+        locations[3][1].setScene(scenes[SceneType.jungle1.ordinal()]);
+        locations[3][2].setScene(scenes[SceneType.reef.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.beach1.ordinal()]);
+        locations[3][4].setScene(scenes[SceneType.jungle3.ordinal()]);
+        locations[3][5].setScene(scenes[SceneType.beach4.ordinal()]);
+        locations[3][6].setScene(scenes[SceneType.beach3.ordinal()]);
+        locations[3][7].setScene(scenes[SceneType.lagoon.ordinal()]);
+        locations[3][8].setScene(scenes[SceneType.jungle2.ordinal()]);
+        locations[4][0].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[4][1].setScene(scenes[SceneType.cave.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.beach2.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.jungle3.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.bambo2.ordinal()]);
+        locations[4][5].setScene(scenes[SceneType.beach4.ordinal()]);
+        locations[4][6].setScene(scenes[SceneType.beach3.ordinal()]);
+        locations[4][7].setScene(scenes[SceneType.bambo3.ordinal()]);
+        locations[4][8].setScene(scenes[SceneType.waterfall.ordinal()]);
+        locations[5][0].setScene(scenes[SceneType.reef.ordinal()]);
+        locations[5][1].setScene(scenes[SceneType.beach1.ordinal()]);
+        locations[5][2].setScene(scenes[SceneType.jungle1.ordinal()]);
+        locations[5][3].setScene(scenes[SceneType.beach4.ordinal()]);
+        locations[5][4].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[5][5].setScene(scenes[SceneType.beach2.ordinal()]);
+        locations[5][6].setScene(scenes[SceneType.mountain.ordinal()]);
+        locations[5][7].setScene(scenes[SceneType.bambo2.ordinal()]);
+        locations[5][8].setScene(scenes[SceneType.beach3.ordinal()]);
+        locations[6][0].setScene(scenes[SceneType.jungle2.ordinal()]);
+        locations[6][1].setScene(scenes[SceneType.cave.ordinal()]);
+        locations[6][2].setScene(scenes[SceneType.lagoon.ordinal()]);
+        locations[6][3].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[6][4].setScene(scenes[SceneType.mountain.ordinal()]);
+        locations[6][5].setScene(scenes[SceneType.lagoon.ordinal()]);
+        locations[6][6].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[6][7].setScene(scenes[SceneType.beach4.ordinal()]);
+        locations[6][8].setScene(scenes[SceneType.waterfall.ordinal()]);
+        locations[7][0].setScene(scenes[SceneType.bambo2.ordinal()]);
+        locations[7][1].setScene(scenes[SceneType.cave.ordinal()]);
+        locations[7][2].setScene(scenes[SceneType.beach4.ordinal()]);
+        locations[7][3].setScene(scenes[SceneType.reef.ordinal()]);
+        locations[7][4].setScene(scenes[SceneType.bambo2.ordinal()]);
+        locations[7][5].setScene(scenes[SceneType.beach1.ordinal()]);
+        locations[7][6].setScene(scenes[SceneType.bambo1.ordinal()]);
+        locations[7][7].setScene(scenes[SceneType.beach3.ordinal()]);
+        locations[7][8].setScene(scenes[SceneType.beach2.ordinal()]);
+        locations[8][0].setScene(scenes[SceneType.jungle3.ordinal()]);
+        locations[8][1].setScene(scenes[SceneType.beach1.ordinal()]);
+        locations[8][2].setScene(scenes[SceneType.jungle1.ordinal()]);
+        locations[8][3].setScene(scenes[SceneType.beach4.ordinal()]);
+        locations[8][4].setScene(scenes[SceneType.jungle1.ordinal()]);
+        locations[8][5].setScene(scenes[SceneType.bambo2.ordinal()]);
+        locations[8][6].setScene(scenes[SceneType.reef.ordinal()]);
+        locations[8][7].setScene(scenes[SceneType.camp.ordinal()]);
+        locations[8][8].setScene(scenes[SceneType.finish.ordinal()]);
     }
     
     public enum IslandInventoryItem {

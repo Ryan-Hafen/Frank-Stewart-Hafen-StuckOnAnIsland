@@ -12,43 +12,52 @@ import java.util.Objects;
  */
 public class Scene implements Serializable {
 
-private String resourceDescription;
-private double resourceQuantity;
-private double resourceCapacity;
+private String description;
+private String mapSymbol;
+private boolean blocked;
+private double travelTime;
 
     public Scene() {
     }
 
-    public String getResourceDescription() {
-        return resourceDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setResourceDescription(String resourceDescription) {
-        this.resourceDescription = resourceDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public double getResourceQuantity() {
-        return resourceQuantity;
+    public String getMapSymbol() {
+        return mapSymbol;
     }
 
-    public void setResourceQuantity(double resourceQuantity) {
-        this.resourceQuantity = resourceQuantity;
+    public void setMapSymbol(String mapSymbol) {
+        this.mapSymbol = mapSymbol;
     }
 
-    public double getResourceCapacity() {
-        return resourceCapacity;
+    public boolean isBlocked() {
+        return blocked;
     }
 
-    public void setResourceCapacity(double resourceCapacity) {
-        this.resourceCapacity = resourceCapacity;
+    public void setBlocked(boolean blocked) {
+        this.blocked = blocked;
+    }
+
+    public double getTravelTime() {
+        return travelTime;
+    }
+
+    public void setTravelTime(double travelTime) {
+        this.travelTime = travelTime;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 73 * hash + Objects.hashCode(this.resourceDescription);
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceQuantity) ^ (Double.doubleToLongBits(this.resourceQuantity) >>> 32));
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceCapacity) ^ (Double.doubleToLongBits(this.resourceCapacity) >>> 32));
+        hash = 97 * hash + Objects.hashCode(this.description);
+        hash = 97 * hash + Objects.hashCode(this.mapSymbol);
+        hash = 97 * hash + (this.blocked ? 1 : 0);
         return hash;
     }
 
@@ -64,21 +73,20 @@ private double resourceCapacity;
             return false;
         }
         final Scene other = (Scene) obj;
-        if (Double.doubleToLongBits(this.resourceQuantity) != Double.doubleToLongBits(other.resourceQuantity)) {
+        if (this.blocked != other.blocked) {
             return false;
         }
-        if (Double.doubleToLongBits(this.resourceCapacity) != Double.doubleToLongBits(other.resourceCapacity)) {
+        if (this.travelTime != other.travelTime) {
             return false;
         }
-        if (!Objects.equals(this.resourceDescription, other.resourceDescription)) {
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.mapSymbol, other.mapSymbol)) {
             return false;
         }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Scene{" + "resourceDescription=" + resourceDescription + ", resourceQuantity=" + resourceQuantity + ", resourceCapacity=" + resourceCapacity + '}';
-    }
-
+    
 }
