@@ -12,33 +12,53 @@ import java.util.Objects;
  * @author RyanHafen
  */
 public class RaftMaterial implements Serializable{
-    private String materialWood;
-    private String materialVine;
+    private String description;
+    private double healthPoints;
+    private int inventoryQuantity;
+    private double inventorySize;
 
     public RaftMaterial() {
     }
-
-    public String getMaterialWood() {
-        return materialWood;
+    
+    public String getDescription() {
+        return description;
     }
 
-    public void setMaterialWood(String materialWood) {
-        this.materialWood = materialWood;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getMaterialVine() {
-        return materialVine;
+    public double getHealthPoints() {
+        return healthPoints;
     }
 
-    public void setMaterialVine(String materialVine) {
-        this.materialVine = materialVine;
+    public void setHealthPoints(double healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public int getInventoryQuantity() {
+        return inventoryQuantity;
+    }
+
+    public void setInventoryQuantity(int inventoryQuantity) {
+        this.inventoryQuantity = inventoryQuantity;
+    }
+
+    public double getInventorySize() {
+        return inventorySize;
+    }
+
+    public void setInventorySize(double inventorySize) {
+        this.inventorySize = inventorySize;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 41 * hash + Objects.hashCode(this.materialWood);
-        hash = 41 * hash + Objects.hashCode(this.materialVine);
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.description);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.healthPoints) ^ (Double.doubleToLongBits(this.healthPoints) >>> 32));
+        hash = 37 * hash + this.inventoryQuantity;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.inventorySize) ^ (Double.doubleToLongBits(this.inventorySize) >>> 32));
         return hash;
     }
 
@@ -54,10 +74,16 @@ public class RaftMaterial implements Serializable{
             return false;
         }
         final RaftMaterial other = (RaftMaterial) obj;
-        if (!Objects.equals(this.materialWood, other.materialWood)) {
+        if (Double.doubleToLongBits(this.healthPoints) != Double.doubleToLongBits(other.healthPoints)) {
             return false;
         }
-        if (!Objects.equals(this.materialVine, other.materialVine)) {
+        if (this.inventoryQuantity != other.inventoryQuantity) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.inventorySize) != Double.doubleToLongBits(other.inventorySize)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
@@ -65,9 +91,6 @@ public class RaftMaterial implements Serializable{
 
     @Override
     public String toString() {
-        return "raftMaterial{" + "materialWood=" + materialWood + ", materialVine=" + materialVine + '}';
+        return "RaftMaterial{" + "description=" + description + ", healthPoints=" + healthPoints + ", inventoryQuantity=" + inventoryQuantity + ", inventorySize=" + inventorySize + '}';
     }
-    
-    
-    
 }

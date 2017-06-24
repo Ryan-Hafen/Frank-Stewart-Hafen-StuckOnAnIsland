@@ -13,11 +13,13 @@ import java.util.Objects;
  */
 public class ToolInventory implements Serializable{
     private String description;
-    private String toolType;
+    private double healthPoints;
+    private int inventoryQuantity;
+    private double inventorySize;
 
     public ToolInventory() {
     }
-
+    
     public String getDescription() {
         return description;
     }
@@ -26,19 +28,37 @@ public class ToolInventory implements Serializable{
         this.description = description;
     }
 
-    public String getToolType() {
-        return toolType;
+    public double getHealthPoints() {
+        return healthPoints;
     }
 
-    public void setToolType(String toolType) {
-        this.toolType = toolType;
+    public void setHealthPoints(double healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public int getInventoryQuantity() {
+        return inventoryQuantity;
+    }
+
+    public void setInventoryQuantity(int inventoryQuantity) {
+        this.inventoryQuantity = inventoryQuantity;
+    }
+
+    public double getInventorySize() {
+        return inventorySize;
+    }
+
+    public void setInventorySize(double inventorySize) {
+        this.inventorySize = inventorySize;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.description);
-        hash = 89 * hash + Objects.hashCode(this.toolType);
+        int hash = 3;
+        hash = 37 * hash + Objects.hashCode(this.description);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.healthPoints) ^ (Double.doubleToLongBits(this.healthPoints) >>> 32));
+        hash = 37 * hash + this.inventoryQuantity;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.inventorySize) ^ (Double.doubleToLongBits(this.inventorySize) >>> 32));
         return hash;
     }
 
@@ -54,10 +74,16 @@ public class ToolInventory implements Serializable{
             return false;
         }
         final ToolInventory other = (ToolInventory) obj;
-        if (!Objects.equals(this.description, other.description)) {
+        if (Double.doubleToLongBits(this.healthPoints) != Double.doubleToLongBits(other.healthPoints)) {
             return false;
         }
-        if (!Objects.equals(this.toolType, other.toolType)) {
+        if (this.inventoryQuantity != other.inventoryQuantity) {
+            return false;
+        }
+        if (Double.doubleToLongBits(this.inventorySize) != Double.doubleToLongBits(other.inventorySize)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
@@ -65,8 +91,6 @@ public class ToolInventory implements Serializable{
 
     @Override
     public String toString() {
-        return "toolInventory{" + "description=" + description + ", toolType=" + toolType + '}';
+        return "ToolInventory{" + "description=" + description + ", healthPoints=" + healthPoints + ", inventoryQuantity=" + inventoryQuantity + ", inventorySize=" + inventorySize + '}';
     }
-    
-    
 }

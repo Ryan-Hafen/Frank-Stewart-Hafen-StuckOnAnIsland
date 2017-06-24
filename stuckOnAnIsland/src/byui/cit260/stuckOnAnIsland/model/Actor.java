@@ -20,9 +20,9 @@ public enum Actor implements Serializable {
 
     Lehi("He is the prophet and leader fo the family");
     
-    private String description;
-    private Point currentCoordinate;
-    private double currentHealth;
+    private final String description;
+    private final Point currentCoordinate;
+    private final double currentHealth;
 //    private final int y;
 //    private final int x;
 
@@ -31,7 +31,7 @@ public enum Actor implements Serializable {
         currentCoordinate = new Point(1,1);
         currentHealth = 100;
     }
-    public String description() {
+    public String getDescription() {
         return description;
     }
     public Point getCurrentCoordinate() {
