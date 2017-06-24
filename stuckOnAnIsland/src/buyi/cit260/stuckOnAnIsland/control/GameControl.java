@@ -77,7 +77,9 @@ public class GameControl {
     }
 
     private static IslandInventory[] createIslandInventoryList() {
-        IslandInventory[] islandInvetory = new IslandInventory[14];
+        IslandInventory[] islandInventory = new IslandInventory[6];
+        
+        IslandInventory berry = new IslandInventory();
         return null;
     }
 
