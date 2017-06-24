@@ -12,6 +12,7 @@ import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.Player;
 import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
 import byui.cit260.stuckOnAnIsland.model.RaftStatus;
+import byui.cit260.stuckOnAnIsland.model.Scene;
 import byui.cit260.stuckOnAnIsland.model.ToolInventory;
 import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
 import java.util.HashSet;
@@ -72,6 +73,10 @@ public class GameControl {
         }else {
             System.out.println("\n*** createSaveGame sub function called ***");
         }
+    }
+
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public enum IslandInventoryItem {

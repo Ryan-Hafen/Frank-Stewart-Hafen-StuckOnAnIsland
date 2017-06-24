@@ -5,6 +5,7 @@
  */
 package buyi.cit260.stuckOnAnIsland.control;
 import byui.cit260.stuckOnAnIsland.model.Map;
+import byui.cit260.stuckOnAnIsland.model.Scene;
 import java.lang.Math;
 
 /**
@@ -13,13 +14,19 @@ import java.lang.Math;
  */
 public class MapControl {
 
-    static Map createMap() {
+    public static Map createMap() {
         
-        Map map = null;
+        Map map = new Map(20,20);
         
-        System.out.println("\n*** createMap() stub function called ***");
+        Scene[] scenes = createScenes();
+        
+        GameControl.assignScenesToLocations(map,scenes);
         
         return map;
+    }
+
+    private static Scene[] createScenes() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

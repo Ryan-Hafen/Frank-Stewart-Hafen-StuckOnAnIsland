@@ -5,60 +5,75 @@
  */
 package byui.cit260.stuckOnAnIsland.model;
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.Set;
 /**
  *
  * @author germa_000
  */
 public class Map implements Serializable {
 
-private String resourceDescription;
-private double resourceQuantity;
-private double resourceCapacity;
-
-private Location [] location;
+private int noOfRows;
+private int noOfColumns;
+private Location[][] locations;
         
     public Map() {
     }
+
+    public Map(int noOfRows, int noOfColumns) {
+        if (noOfRows < 1 || noOfColumns < 1) {
+            System.out.println("The number of rows and columns must be > zero.");
+            return;
+        }
+        
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+        for (int row = 0; row < noOfRows; row++) {
+            for (int column = 0; column < noOfColumns; column++) {
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                locations[row][column] = location;
+            }
+        }
+    }
        
-    public String getResourceDescription() {
-        return resourceDescription;
+    public int getNoOfRows() {
+        return noOfRows;
     }
 
-    public void setResourceDescription(String resourceDescription) {
-        this.resourceDescription = resourceDescription;
+    public void setNoOfRows(int noOfRows) {
+        this.noOfRows = noOfRows;
     }
 
-    public double getResourceQuantity() {
-        return resourceQuantity;
+    public int getNoOfColumns() {
+        return noOfRows;
     }
 
-    public void setResourceQuantity(double resourceQuantity) {
-        this.resourceQuantity = resourceQuantity;
+    public void setNoOfColumns(int noOfColumns) {
+        this.noOfColumns = noOfColumns;
     }
 
-    public double getResourceCapacity() {
-        return resourceCapacity;
+    public Location[][] getLocations() {
+        return locations;
     }
 
-    public void setResourceCapacity(double resourceCapacity) {
-        this.resourceCapacity = resourceCapacity;
-    }
-
-    public Location[] getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location[] location) {
-        this.location = location;
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.resourceDescription);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.resourceQuantity) ^ (Double.doubleToLongBits(this.resourceQuantity) >>> 32));
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.resourceCapacity) ^ (Double.doubleToLongBits(this.resourceCapacity) >>> 32));
+        int hash = 3;
+        hash = 73 * hash + this.noOfRows;
+        hash = 73 * hash + this.noOfColumns;
+        hash = 73 * hash + Arrays.deepHashCode(this.locations);
         return hash;
     }
 
@@ -74,23 +89,16 @@ private Location [] location;
             return false;
         }
         final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.resourceQuantity) != Double.doubleToLongBits(other.resourceQuantity)) {
+        if (this.noOfRows != other.noOfRows) {
             return false;
         }
-        if (Double.doubleToLongBits(this.resourceCapacity) != Double.doubleToLongBits(other.resourceCapacity)) {
+        if (this.noOfColumns != other.noOfColumns) {
             return false;
         }
-        if (!Objects.equals(this.resourceDescription, other.resourceDescription)) {
+        if (!Arrays.deepEquals(this.locations, other.locations)) {
             return false;
         }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Map{" + "resourceDescription=" + resourceDescription + ", resourceQuantity=" + resourceQuantity + ", resourceCapacity=" + resourceCapacity + '}';
-    }
-
-   
-
+    
 }

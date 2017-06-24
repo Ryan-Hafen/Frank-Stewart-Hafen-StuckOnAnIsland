@@ -12,43 +12,63 @@ import java.util.Objects;
  */
 public class Location implements Serializable {
 
-private String resourceDescription;
-private double resourceQuantity;
-private double resourceCapacity;
+private int row;
+private int column;
+private boolean visited;
+private Scene scene;
+private Actor actor;
 
     public Location() {
     }
 
-    public String getResourceDescription() {
-        return resourceDescription;
+    public int getRow() {
+        return row;
     }
 
-    public void setResourceDescription(String resourceDescription) {
-        this.resourceDescription = resourceDescription;
+    public void setRow(int row) {
+        this.row = row;
     }
 
-    public double getResourceQuantity() {
-        return resourceQuantity;
+    public int getColumn() {
+        return column;
     }
 
-    public void setResourceQuantity(double resourceQuantity) {
-        this.resourceQuantity = resourceQuantity;
+    public void setColumn(int column) {
+        this.column = column;
     }
 
-    public double getResourceCapacity() {
-        return resourceCapacity;
+    public boolean isVisited() {
+        return visited;
     }
 
-    public void setResourceCapacity(double resourceCapacity) {
-        this.resourceCapacity = resourceCapacity;
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 73 * hash + Objects.hashCode(this.resourceDescription);
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceQuantity) ^ (Double.doubleToLongBits(this.resourceQuantity) >>> 32));
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceCapacity) ^ (Double.doubleToLongBits(this.resourceCapacity) >>> 32));
+        int hash = 3;
+        hash = 67 * hash + this.row;
+        hash = 67 * hash + this.column;
+        hash = 67 * hash + (this.visited ? 1 : 0);
+        hash = 67 * hash + Objects.hashCode(this.scene);
+        hash = 67 * hash + Objects.hashCode(this.actor);
         return hash;
     }
 
@@ -64,21 +84,22 @@ private double resourceCapacity;
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.resourceQuantity) != Double.doubleToLongBits(other.resourceQuantity)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (Double.doubleToLongBits(this.resourceCapacity) != Double.doubleToLongBits(other.resourceCapacity)) {
+        if (this.column != other.column) {
             return false;
         }
-        if (!Objects.equals(this.resourceDescription, other.resourceDescription)) {
+        if (this.visited != other.visited) {
+            return false;
+        }
+        if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
+        if (this.actor != other.actor) {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" + "resourceDescription=" + resourceDescription + ", resourceQuantity=" + resourceQuantity + ", resourceCapacity=" + resourceCapacity + '}';
     }
 
 }
