@@ -5,16 +5,11 @@
  */
 package byui.cit260.stuckOnAnIsland.view;
 
-import buyi.cit260.stuckOnAnIsland.control.BackpackControl;
-import buyi.cit260.stuckOnAnIsland.control.GameControl;
-import byui.cit260.stuckOnAnIsland.model.Backpack;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.IslandInventory;
 import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
 import byui.cit260.stuckOnAnIsland.model.ToolInventory;
 import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
-import java.util.ArrayList;
-import java.util.Scanner;
 import stuckonanisland.StuckOnAnIsland;
 
 /**

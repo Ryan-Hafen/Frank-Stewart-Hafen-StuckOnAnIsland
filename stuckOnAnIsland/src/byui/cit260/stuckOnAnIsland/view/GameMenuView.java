@@ -6,9 +6,8 @@
 package byui.cit260.stuckOnAnIsland.view;
 
 
-import buyi.cit260.stuckOnAnIsland.control.GameControl;
-import stuckonanisland.StuckOnAnIsland;
-import java.util.Scanner;
+import byui.cit260.stuckOnAnIsland.model.Game;
+import byui.cit260.stuckOnAnIsland.model.Map;
 
 /**
  *
@@ -25,6 +24,7 @@ public class GameMenuView extends View{
              + "\n*  Game Play Menu                                              *"
              + "\n*    This menu will help you navigate through the game.        *"
              + "\n*                                                              *"
+             + "\n*  V - View Map                                                *"
              + "\n*  J - Wreckage inventory menu                                 *"
              + "\n*  K - Island inventory menu                                   *"
              + "\n*  D - Display tools                                           *"
@@ -52,6 +52,9 @@ public class GameMenuView extends View{
         value = value.toUpperCase(); //convert choice to upper case
         
         switch (value) {
+            case "V": // Wreckage inventory menu
+                this.displayMap();
+                break;
             case "J": // Wreckage inventory menu
                 this.displayWreckageInventoryMenu();
                 break;
@@ -194,5 +197,8 @@ public class GameMenuView extends View{
         // display the Save Game Menu
         SaveGameView saveGame = new SaveGameView();
         saveGame.display();
+    }
+
+    private void displayMap() {
     }
 }
