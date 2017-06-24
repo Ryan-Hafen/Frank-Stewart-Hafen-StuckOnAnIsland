@@ -5,8 +5,17 @@
  */
 package buyi.cit260.stuckOnAnIsland.control;
 
+import byui.cit260.stuckOnAnIsland.model.Backpack;
 import byui.cit260.stuckOnAnIsland.model.Game;
+import byui.cit260.stuckOnAnIsland.model.IslandInventory;
+import byui.cit260.stuckOnAnIsland.model.Map;
 import byui.cit260.stuckOnAnIsland.model.Player;
+import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
+import byui.cit260.stuckOnAnIsland.model.RaftStatus;
+import byui.cit260.stuckOnAnIsland.model.ToolInventory;
+import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
+import java.util.HashSet;
+import java.util.Set;
 import stuckonanisland.StuckOnAnIsland;
 
 /**
@@ -31,7 +40,26 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame sub function called ***");
+        Game game = new Game();
+        StuckOnAnIsland.setCurrentGame(game);
+        
+        game.setPlayer(player);
+        
+        RaftStatus raft = new RaftStatus();
+        game.setRaft(raft);
+        
+        Backpack backpack = BackpackControl.createBackpack();
+        game.setBackpack(backpack);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        IslandInventory[] islandInventory = GameControl.createIslandInventoryList();
+        WreckageInventory[] wreckageInventory = GameControl.createWreckageInventoryList();
+        ToolInventory[] toolInventory = GameControl.createToolInventoryList();
+        RaftMaterial[] raftMaterial = GameControl.createRaftMaterialList();
+        
+        
     }
 
     public static void createHealth() {
@@ -46,6 +74,26 @@ public class GameControl {
         }else {
             System.out.println("\n*** createSaveGame sub function called ***");
         }
+    }
+
+    private static IslandInventory[] createIslandInventoryList() {
+        IslandInventory[] islandInvetory = new IslandInventory[14];
+        return null;
+    }
+
+    private static WreckageInventory[] createWreckageInventoryList() {
+        System.out.println("\n*** createWreckageInventoryList sub function called ***");
+        return null;
+    }
+
+    private static ToolInventory[] createToolInventoryList() {
+        System.out.println("\n*** createToolInventoryList sub function called ***");
+        return null;
+    }
+
+    private static RaftMaterial[] createRaftMaterialList() {
+        System.out.println("\n*** createRaftMaterialList sub function called ***");
+        return null;
     }
 
     

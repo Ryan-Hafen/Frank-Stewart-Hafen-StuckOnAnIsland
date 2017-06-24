@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package buyi.cit260.stuckOnAnIsland.control;
+import byui.cit260.stuckOnAnIsland.model.Map;
 import java.lang.Math;
 
 /**
@@ -11,6 +12,15 @@ import java.lang.Math;
  * @author Adam Frank
  */
 public class MapControl {
+
+    static Map createMap() {
+        
+        Map map = null;
+        
+        System.out.println("\n*** createMap() stub function called ***");
+        
+        return map;
+    }
     
     
     private double endLocation;

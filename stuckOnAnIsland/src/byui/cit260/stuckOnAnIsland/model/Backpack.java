@@ -16,6 +16,7 @@ private String resourceDescription;
 private double resourceQuantity;
 private double resourceCapacity;
 
+
     public Backpack() {
     }
 
@@ -43,6 +44,7 @@ private double resourceCapacity;
         this.resourceCapacity = resourceCapacity;
     }
 
+    
     @Override
     public int hashCode() {
         int hash = 7;

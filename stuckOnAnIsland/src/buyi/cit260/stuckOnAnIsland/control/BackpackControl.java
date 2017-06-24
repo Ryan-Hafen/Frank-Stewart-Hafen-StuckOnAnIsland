@@ -5,6 +5,7 @@
  */
 package buyi.cit260.stuckOnAnIsland.control;
 
+import byui.cit260.stuckOnAnIsland.model.Backpack;
 import stuckonanisland.StuckOnAnIsland;
 /**
  *
@@ -17,7 +18,12 @@ public class BackpackControl {
     }
 
     public static void createInventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** createInventory() stub function called ***");
+    }
+
+    static Backpack createBackpack() {
+        System.out.println("\n*** createBackpack() stub function called ***");
+        return null;
     }
     
 }

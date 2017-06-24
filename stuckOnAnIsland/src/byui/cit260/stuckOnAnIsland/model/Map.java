@@ -15,26 +15,10 @@ public class Map implements Serializable {
 private String resourceDescription;
 private double resourceQuantity;
 private double resourceCapacity;
-private long x;
-private long y;
+
+private Location [] location;
         
     public Map() {
-    }
-
-    public long getX() {
-        return x;
-    }
-
-    public void setX(long x) {
-        this.x = x;
-    }
-
-    public long getY() {
-        return y;
-    }
-
-    public void setY(long y) {
-        this.y = y;
     }
        
     public String getResourceDescription() {
@@ -61,14 +45,20 @@ private long y;
         this.resourceCapacity = resourceCapacity;
     }
 
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 67 * hash + Objects.hashCode(this.resourceDescription);
         hash = 67 * hash + (int) (Double.doubleToLongBits(this.resourceQuantity) ^ (Double.doubleToLongBits(this.resourceQuantity) >>> 32));
         hash = 67 * hash + (int) (Double.doubleToLongBits(this.resourceCapacity) ^ (Double.doubleToLongBits(this.resourceCapacity) >>> 32));
-        hash = 67 * hash + (int) (this.x ^ (this.x >>> 32));
-        hash = 67 * hash + (int) (this.y ^ (this.y >>> 32));
         return hash;
     }
 
@@ -90,12 +80,6 @@ private long y;
         if (Double.doubleToLongBits(this.resourceCapacity) != Double.doubleToLongBits(other.resourceCapacity)) {
             return false;
         }
-        if (this.x != other.x) {
-            return false;
-        }
-        if (this.y != other.y) {
-            return false;
-        }
         if (!Objects.equals(this.resourceDescription, other.resourceDescription)) {
             return false;
         }
@@ -104,7 +88,7 @@ private long y;
 
     @Override
     public String toString() {
-        return "Map{" + "resourceDescription=" + resourceDescription + ", resourceQuantity=" + resourceQuantity + ", resourceCapacity=" + resourceCapacity + ", x=" + x + ", y=" + y + '}';
+        return "Map{" + "resourceDescription=" + resourceDescription + ", resourceQuantity=" + resourceQuantity + ", resourceCapacity=" + resourceCapacity + '}';
     }
 
    
