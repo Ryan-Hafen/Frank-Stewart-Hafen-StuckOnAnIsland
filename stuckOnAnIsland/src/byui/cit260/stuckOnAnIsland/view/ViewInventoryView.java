@@ -88,9 +88,6 @@ public class ViewInventoryView extends View{
     }
 
     private void viewWreckageInventory() {
-//        System.out.println("\n*** viewInventory function called ***");
-//        String[] backPackList = {"Flashlight", "Bottle of Water", "Knife"};
-//        listBackPackItems(backPackList);
         StringBuilder line;
         
         Game game = StuckOnAnIsland.getCurrentGame();
@@ -157,19 +154,6 @@ public class ViewInventoryView extends View{
         System.out.println("\n*** saveGame function called ***");
     }
 
-//    private static class Resource {
-//
-//        public Resource(String knife) {
-//        }
-//    }
-    
-//    private void listBackPackItems(String[] backPackList) {
-//        int i = 1;
-//        for (String lists : backPackList) {
-//            System.out.println("List item #" + i + " is: " + backPackList[i-1]);
-//            i++;
-//    }
-//        System.out.println("You have " + (i-1) + " items in your backpack!");
-//    }
+
     
 }
