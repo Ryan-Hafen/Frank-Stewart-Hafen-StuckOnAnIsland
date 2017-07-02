@@ -13,16 +13,16 @@ public class ViewInventoryViewExceptions extends Exception{
         super(string);
     }
 
-    public ViewInventoryViewExceptions(String string, Throwable thrwbl) {
-        super(string, thrwbl);
+    public ViewInventoryViewExceptions(String string, Throwable thrw) {
+        super(string, thrw);
     }
 
-    public ViewInventoryViewExceptions(Throwable thrwbl) {
-        super(thrwbl);
+    public ViewInventoryViewExceptions(Throwable thrw) {
+        super(thrw);
     }
 
-    public ViewInventoryViewExceptions(String string, Throwable thrwbl, boolean bln, boolean bln1) {
-        super(string, thrwbl, bln, bln1);
+    public ViewInventoryViewExceptions(String string, Throwable thrw, boolean bln, boolean bln1) {
+        super(string, thrw, bln, bln1);
     }
     
 }
