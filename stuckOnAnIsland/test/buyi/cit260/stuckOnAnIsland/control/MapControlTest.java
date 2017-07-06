@@ -26,8 +26,7 @@ public class MapControlTest {
 
         /**
          * ****************************************
-         * Test Case #1
-         ****************************************
+         * Test Case #1 ***************************************
          */
         System.out.println("Test case #1");
 
@@ -41,8 +40,10 @@ public class MapControlTest {
 
         // expected output value
         double expResult = 9.0;
-        double result=0.0;
-        
+        double result = 0.0;
+        double result2 = 0.0;
+        double result3 = 0.0;
+        double result4 = 0.0;
         try {
 
             // call function to run test
@@ -67,8 +68,7 @@ public class MapControlTest {
 
         /**
          * ****************************************
-         * Test Case #2
-     ****************************************
+         * Test Case #2 ***************************************
          */
         System.out.println("Test case #2");
 
@@ -84,8 +84,11 @@ public class MapControlTest {
         double expResult2 = -999.0;
 
         // call function to run test
-        double result2 = instance2.calcHealthUsed(startLocation, endLocation, startHealth);
-
+        try {
+            result2 = instance2.calcHealthUsed(startLocation, endLocation, startHealth);
+        } catch (MapControlException mce) {
+            System.out.println(mce.getMessage());
+        }
         // compares the results
         // compares the results
         if (expResult2 == result2) {
@@ -102,8 +105,7 @@ public class MapControlTest {
 
         /**
          * ****************************************
-         * Test Case #3
-     ****************************************
+         * Test Case #3 ***************************************
          */
         System.out.println("Test case #3");
 
@@ -119,8 +121,11 @@ public class MapControlTest {
         double expResult3 = -999.0;
 
         // call function to run test
-        double result3 = instance3.calcHealthUsed(startLocation, endLocation, startHealth);
-
+        try {
+            result3 = instance3.calcHealthUsed(startLocation, endLocation, startHealth);
+        } catch (MapControlException mce) {
+            System.out.println(mce.getMessage());
+        }
         // compares the results
         // compares the results
         if (expResult3 == result3) {
@@ -137,8 +142,7 @@ public class MapControlTest {
 
         /**
          * ****************************************
-         * Test Case #4
-     ****************************************
+         * Test Case #4 ***************************************
          */
         System.out.println("Test case #4");
 
@@ -154,8 +158,11 @@ public class MapControlTest {
         double expResult4 = -999.0;
 
         // call function to run test
-        double result4 = instance4.calcHealthUsed(startLocation, endLocation, startHealth);
-
+        try {
+            result4 = instance4.calcHealthUsed(startLocation, endLocation, startHealth);
+        } catch (MapControlException mce) {
+            System.out.println(mce.getMessage());
+        }
         // compares the results
         // compares the results
         if (expResult4 == result4) {
