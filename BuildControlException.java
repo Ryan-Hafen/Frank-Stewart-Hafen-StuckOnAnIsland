@@ -6,8 +6,8 @@
 package buyi.cit260.stuckOnAnIsland.exceptions;
 
 /**
- * @author Ryan Hafen
- * @author John Stewart
+ *
+ * @author StewartJohn
  */
 public class BuildControlException extends Exception {
 
