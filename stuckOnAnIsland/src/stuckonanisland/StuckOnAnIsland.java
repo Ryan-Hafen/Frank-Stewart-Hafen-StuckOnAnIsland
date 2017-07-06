@@ -32,16 +32,20 @@ public class StuckOnAnIsland {
     public static Player getPlayer() {
         return player;
     }
-    
+
     public static void setPlayer(Player player) {
         StuckOnAnIsland.player = player;
     }
-    
-        
+
     public static void main(String[] args) {
-        
-        StartProgramView startProgramView = new StartProgramView();
-          startProgramView.display();
+        while (true) {
+            try {
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
+                break;
+            } catch (Exception excp) {
+                System.out.println(excp);
+            }
+        }
     }
-    
 }
