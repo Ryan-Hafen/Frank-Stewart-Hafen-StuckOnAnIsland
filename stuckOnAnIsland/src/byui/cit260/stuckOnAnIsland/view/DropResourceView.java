@@ -21,10 +21,11 @@ class DropResourceView extends View {
     @Override
     public boolean doAction(String value) {
         String selection = null;
-        selection = keyboard.nextLine(); // get infile for keyboard
-        selection = selection.trim();
-        //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
 
+        //selection = keyboard.nextLine(); // get infile for keyboard
+        selection = selection.trim();
+
+        //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
         //String value = ""; // value to be returned
         value = value.toUpperCase(); //convert choice to upper case
 

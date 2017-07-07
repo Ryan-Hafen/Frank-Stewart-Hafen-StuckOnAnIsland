@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.stuckOnAnIsland.view.View;
+
 
 import java.io.PrintWriter;
 import stuckonanisland.StuckOnAnIsland;
@@ -25,7 +25,7 @@ public class ErrorView {
     }
 
     //log error
-    logFile.println("ERROR - " + errorMessage);
+    //logFile.println("ERROR - " + errorMessage);
   
     
 }

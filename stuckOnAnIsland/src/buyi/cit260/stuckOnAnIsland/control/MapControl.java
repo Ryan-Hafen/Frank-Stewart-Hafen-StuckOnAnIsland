@@ -264,12 +264,13 @@ public class MapControl {
         return "MapControl{" + "endLocation=" + endLocation + ", startLocation=" + startLocation + ", startHealth=" + startHealth + ", endHealth=" + endHealth + '}';
     }
 
-    public double calcHealthUsed(double startLocation, double endLocation, double startHealth) throws MapControlException {
+    public double calcHealthUsed(double startLocation, double endLocation,
+            double startHealth) throws MapControlException {
         endHealth = startHealth - Math.abs(endLocation - startLocation);
         if (endHealth < 0.0) {
             //return -999.0;
             throw new MapControlException("Out of health");
-            
+
         } else {
             return endHealth;
         }
