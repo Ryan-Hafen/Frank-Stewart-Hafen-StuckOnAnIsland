@@ -6,6 +6,9 @@
 package byui.cit260.stuckOnAnIsland.view;
 
 import java.util.Scanner;
+import stuckonanisland.StuckOnAnIsland;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -14,6 +17,8 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    protected final BufferedReader keyboard = StuckOnAnIsland.getInFile();
+    protected final PrintWriter console = StuckOnAnIsland.getOutFile();
     
     public View() {
     }
