@@ -79,6 +79,10 @@ public class GameControl {
         }
     }
     
+    public static void getSavedGame(String filePath) {
+        System.out.println("getSavedGame called");
+    }
+    
     public static void saveGame(Game game, String filepath) 
             throws GameControlException {
         try( FileOutputStream fops = new FileOutputStream(filepath)) {

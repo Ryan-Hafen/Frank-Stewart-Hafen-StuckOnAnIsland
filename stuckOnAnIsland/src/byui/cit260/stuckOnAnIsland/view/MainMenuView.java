@@ -10,6 +10,7 @@ import buyi.cit260.stuckOnAnIsland.control.GameControl;
 // ******* removed when implemented view super class *******
 //import java.util.Scanner;-- removed when implemented view super class
 import stuckonanisland.StuckOnAnIsland;
+import byui.cit260.stuckOnAnIsland.view.GameMenuView;
 
 /**
  *
@@ -112,8 +113,23 @@ public class MainMenuView extends View{
     }
 
     private void startExistingGame() {
-        System.out.println("\n*** startExistingGame function called ***");
+        //System.out.println("\n*** startExistingGame function called ***");
+        //prompt for and get the filename
+        this.console.println("\n\nEnter the filename");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+            
+        } catch (Exception ex) {
+            ErrorView.display(ex.getMessage(), "MainMenuView");
+        }
+    
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
+    
+    
 
     private void displayHelpMenu() {
         // display the Help menu

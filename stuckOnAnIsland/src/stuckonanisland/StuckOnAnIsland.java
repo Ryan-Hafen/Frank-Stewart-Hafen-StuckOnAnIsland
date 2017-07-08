@@ -8,7 +8,7 @@ package stuckonanisland;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Player;
 import byui.cit260.stuckOnAnIsland.view.StartProgramView;
-import com.sun.istack.internal.logging.Logger;
+//import com.sun.istack.internal.logging.Logger;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class StuckOnAnIsland {
     public static void setPlayer(Player player) {
         StuckOnAnIsland.player = player;
     }
-    
+
     public static PrintWriter getOutFile() {
         return outFile;
     }
@@ -67,9 +67,10 @@ public class StuckOnAnIsland {
         StuckOnAnIsland.logFile = logFile;
     }
 
-
     public static void main(String[] args) {
-
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.display();
+        
         while (true) {
             try {
                 StuckOnAnIsland.inFile
@@ -82,8 +83,8 @@ public class StuckOnAnIsland {
 
                 StuckOnAnIsland.logFile = new PrintWriter(filePath);
 
-                StartProgramView startProgramView = new StartProgramView();
-                startProgramView.display();
+                //StartProgramView startProgramView = new StartProgramView();
+                //startProgramView.display();
                 break;
             } catch (Exception excp) {
                 //System.out.println(excp);
@@ -106,6 +107,4 @@ public class StuckOnAnIsland {
             }
         }
     }
-
-    
 }
