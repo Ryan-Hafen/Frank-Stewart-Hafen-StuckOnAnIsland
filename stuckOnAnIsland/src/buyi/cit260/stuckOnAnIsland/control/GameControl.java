@@ -19,7 +19,9 @@ import byui.cit260.stuckOnAnIsland.model.ToolInventory;
 import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
 import java.util.HashSet;
 import java.util.Set;
+import java.io.*;
 import stuckonanisland.StuckOnAnIsland;
+import buyi.cit260.stuckOnAnIsland.exceptions.GameControlException;
 
 /**
  *
@@ -74,6 +76,17 @@ public class GameControl {
             return;
         }else {
             System.out.println("\n*** createSaveGame sub function called ***");
+        }
+    }
+    
+    public static void saveGame(Game game, String filepath) 
+            throws GameControlException {
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            output.writeObject(game); //write the game object
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
         }
     }
 

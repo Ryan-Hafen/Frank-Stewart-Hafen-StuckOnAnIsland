@@ -4,46 +4,51 @@
  * and open the template in the editor.
  */
 package byui.cit260.stuckOnAnIsland.model;
+
+import byui.cit260.stuckOnAnIsland.view.ErrorView;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Set;
+
 /**
  *
  * @author germa_000
  */
 public class Map implements Serializable {
 
-private int noOfRows;
-private int noOfColumns;
-private Location[][] locations;
-        
+    private int noOfRows;
+    private int noOfColumns;
+    private Location[][] locations;
+
     public Map() {
     }
 
     public Map(int noOfRows, int noOfColumns) {
         if (noOfRows < 1 || noOfColumns < 1) {
-            System.out.println("The number of rows and columns must be > zero.");
+            //System.out.println("The number of rows and columns must be > zero.");
+            ErrorView.display(this.getClass().getName(),
+                    "The number of rows and columns must be > zero.");
             return;
         }
-        
+
         this.noOfRows = noOfRows;
         this.noOfColumns = noOfColumns;
-        
+
         this.locations = new Location[noOfRows][noOfColumns];
-        
+
         for (int row = 0; row < noOfRows; row++) {
             for (int column = 0; column < noOfColumns; column++) {
                 Location location = new Location();
                 location.setColumn(column);
                 location.setRow(row);
                 location.setVisited(false);
-                
+
                 locations[row][column] = location;
             }
         }
     }
-       
+
     public int getNoOfRows() {
         return noOfRows;
     }
@@ -100,5 +105,5 @@ private Location[][] locations;
         }
         return true;
     }
-    
+
 }

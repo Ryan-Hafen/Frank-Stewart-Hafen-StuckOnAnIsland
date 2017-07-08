@@ -12,19 +12,18 @@ import stuckonanisland.StuckOnAnIsland;
  *
  * @author RyanHafen
  */
-class SaveGameView  extends View{
-    
+class SaveGameView extends View {
+
 //    private String promptMessage;
-    
     public SaveGameView() {
 //        this.promptMessage =    
-        super( "\n****************************************************************"
-             + "\n*  Save Game                                                   *"
-             + "\n*                                                              *"
-             + "\n*  Y - Save Game                                               *"
-             + "\n*  N - Return to Game Play Menu                                *"
-             + "\n*                                                              *"
-             + "\n****************************************************************"
+        super("\n****************************************************************"
+                + "\n*  Save Game                                                   *"
+                + "\n*                                                              *"
+                + "\n*  Y - Save Game                                               *"
+                + "\n*  N - Return to Game Play Menu                                *"
+                + "\n*                                                              *"
+                + "\n****************************************************************"
         );
     }
 
@@ -39,22 +38,35 @@ class SaveGameView  extends View{
                 this.displayGameMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                //System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
-        
+
         return false;
     }
 
     private void saveGame() {
-        GameControl.createSaveGame(StuckOnAnIsland.getPlayer(), StuckOnAnIsland.getCurrentGame());
-        
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        //prompt for name to save game data
+        this.console.println("\n\nEnter the file path for file where the game "
+                + "is to be saved.");
+        String filePath = this.getInput();
+
+        try {
+            //save the game to the specified file
+            GameControl.saveGame(StuckOnAnIsland.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+
+//GameControl.createSaveGame(StuckOnAnIsland.getPlayer(), StuckOnAnIsland.getCurrentGame());
+        //GameMenuView gameMenu = new GameMenuView();
+        //gameMenu.display();
     }
 
     private void displayGameMenu() {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
-}  
+}

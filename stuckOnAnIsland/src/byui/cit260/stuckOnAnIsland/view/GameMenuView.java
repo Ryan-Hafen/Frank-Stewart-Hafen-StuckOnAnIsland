@@ -5,7 +5,6 @@
  */
 package byui.cit260.stuckOnAnIsland.view;
 
-
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Map;
 
@@ -13,44 +12,42 @@ import byui.cit260.stuckOnAnIsland.model.Map;
  *
  * @author hafenr
  */
+public class GameMenuView extends View {
 
-public class GameMenuView extends View{
-    
 //    private String promptMessage;
-    
     public GameMenuView() {
 //        this.promptMessage =
-        super( "\n****************************************************************"
-             + "\n*  Game Play Menu                                              *"
-             + "\n*    This menu will help you navigate through the game.        *"
-             + "\n*                                                              *"
-             + "\n*  V - View Map                                                *"
-             + "\n*  J - Wreckage inventory menu                                 *"
-             + "\n*  K - Island inventory menu                                   *"
-             + "\n*  D - Display tools                                           *"
-             + "\n*  B - Build tools                                             *"
-             + "\n*  W - Work on raft                                            *"
-             + "\n*  C - Collect resource                                        *" 
-             + "\n*  X - Drop resource                                           *"
-             + "\n*  I - View inventory                                          *"
-             + "\n*  R - View raft status                                        *"
-             + "\n*  O - Observe health menu                                     *"
-             + "\n*  E - Explore locations                                       *"
-             + "\n*  M - Move to a location                                      *"
-             + "\n*  L - Display current location                                *"
-             + "\n*  S - Save game                                               *"
-             + "\n*  H - Help menu                                               *"
-             + "\n*  Q - Quit                                                    *"
-             + "\n*                                                              *"
-             + "\n*  Please enter your selection:                                *"
-             + "\n*                                                              *"
-             + "\n****************************************************************"
+        super("\n****************************************************************"
+                + "\n*  Game Play Menu                                              *"
+                + "\n*    This menu will help you navigate through the game.        *"
+                + "\n*                                                              *"
+                + "\n*  V - View Map                                                *"
+                + "\n*  J - Wreckage inventory menu                                 *"
+                + "\n*  K - Island inventory menu                                   *"
+                + "\n*  D - Display tools                                           *"
+                + "\n*  B - Build tools                                             *"
+                + "\n*  W - Work on raft                                            *"
+                + "\n*  C - Collect resource                                        *"
+                + "\n*  X - Drop resource                                           *"
+                + "\n*  I - View inventory                                          *"
+                + "\n*  R - View raft status                                        *"
+                + "\n*  O - Observe health menu                                     *"
+                + "\n*  E - Explore locations                                       *"
+                + "\n*  M - Move to a location                                      *"
+                + "\n*  L - Display current location                                *"
+                + "\n*  S - Save game                                               *"
+                + "\n*  H - Help menu                                               *"
+                + "\n*  Q - Quit                                                    *"
+                + "\n*                                                              *"
+                + "\n*  Please enter your selection:                                *"
+                + "\n*                                                              *"
+                + "\n****************************************************************"
         );
     }
 
     public boolean doAction(String value) {
         value = value.toUpperCase(); //convert choice to upper case
-        
+
         switch (value) {
             case "V": // Wreckage inventory menu
                 this.displayMap();
@@ -101,10 +98,12 @@ public class GameMenuView extends View{
                 this.displayHelpMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                //System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
-        
+
         return false;
     }
 
@@ -119,7 +118,6 @@ public class GameMenuView extends View{
         IslandInventoryView islandInventoryMenu = new IslandInventoryView();
         islandInventoryMenu.display();
     }
-
 
     private void displayBuildToolsMenu() {
         // display the Build Tools Menu

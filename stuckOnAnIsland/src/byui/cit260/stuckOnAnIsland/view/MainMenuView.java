@@ -95,7 +95,9 @@ public class MainMenuView extends View{
                 this.displayHelpMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                //System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;

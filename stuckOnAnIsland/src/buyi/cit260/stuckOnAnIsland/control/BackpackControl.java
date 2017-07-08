@@ -7,14 +7,21 @@ package buyi.cit260.stuckOnAnIsland.control;
 
 import byui.cit260.stuckOnAnIsland.model.Backpack;
 import stuckonanisland.StuckOnAnIsland;
+import java.io.*;
+import byui.cit260.stuckOnAnIsland.view.View;
+
 /**
  *
  * @author RyanHafen
  */
 public class BackpackControl {
 
-    public static void getTools() {
-        System.out.println("\n*** getTools() stub function called ***");
+    boolean done = false;
+
+    public void getTools() {
+        
+            System.out.println("\n*** getTools() stub function called ***");
+            //this.console.println("\n*** getTools() stub function called ***");
     }
 
     public static void createInventory() {
@@ -25,5 +32,5 @@ public class BackpackControl {
         System.out.println("\n*** createBackpack() stub function called ***");
         return null;
     }
-    
+
 }

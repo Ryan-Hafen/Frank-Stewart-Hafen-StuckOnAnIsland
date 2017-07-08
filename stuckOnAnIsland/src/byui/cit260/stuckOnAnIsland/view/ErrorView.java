@@ -1,3 +1,5 @@
+package byui.cit260.stuckOnAnIsland.view;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -5,7 +7,7 @@
  */
 
 
-import java.io.PrintWriter;
+import java.io.*;
 import stuckonanisland.StuckOnAnIsland;
 
 /**
@@ -22,10 +24,10 @@ public class ErrorView {
                 "-----------------------------------------------------------"
                 +"\n- ERROR - " + errorMessage
                 +"\n----------------------------------------------------------");
-    }
+    
 
     //log error
-    //logFile.println("ERROR - " + errorMessage);
+    logFile.println(className + " - " + errorMessage);
   
-    
+    }
 }
