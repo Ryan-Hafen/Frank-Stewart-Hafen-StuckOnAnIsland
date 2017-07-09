@@ -160,9 +160,9 @@ public class MainMenuView extends View {
                 System.out.println("Partial Island Location Printout.");
             }
 
-        } catch (Exception exc) {
+        } catch (Exception ex) {
 
-            ErrorView.display(this.getClass().getName(), exc.getMessage());
+            ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
 
     }
