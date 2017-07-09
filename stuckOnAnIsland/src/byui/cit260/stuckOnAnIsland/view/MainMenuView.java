@@ -148,7 +148,7 @@ public class MainMenuView extends View {
         String johnFileDirectory = this.getInput();
 
         try {
-            if (johnFileDirectory.length() > 3) {
+            if (johnFileDirectory.length() > 9) {
                 String[] array = {"Wreckage", "Reef", "Beach1", "Beach2", "Babmbo1", "Beach3", "Beach4", "Bambo2", "Cave", "Jungle2"};
                 String[] array2 = {"0-0", "0-1", "0-2", "0-3", "0-4", "0-5", "0-6", "0-7", "0-8", "1-0"};
 
