@@ -13,7 +13,6 @@ import buyi.cit260.stuckOnAnIsland.exceptions.GameControlException;
 import stuckonanisland.StuckOnAnIsland;
 import byui.cit260.stuckOnAnIsland.view.GameMenuView;
 
-
 /**
  *
  * @author hafenr
@@ -33,6 +32,7 @@ public class MainMenuView extends View {
                 + "\n*  H - Help                                                    *"
                 + "\n*  Q - Quit                                                    *"
                 + "\n*  A - Print Adam's List                                       *"
+                + "\n*  J - Print John's List                                       *"
                 + "\n*                                                              *"
                 + "\n*  Please enter your selection:                                *"
                 + "\n*                                                              *"
@@ -44,7 +44,7 @@ public class MainMenuView extends View {
 //    void displayMainMenuView() {
 //        boolean done = false; //set flag to not done
 //        do {
-//            // promplt for and get players name
+//            // prompt for and get players name
 //            String menuOption = this.getMenuOption();
 //            if (menuOption.toUpperCase().equals("Q")) //user wants to quit
 //                return; // exit the game
@@ -78,7 +78,13 @@ public class MainMenuView extends View {
 //        
 //        return value; // return the value entered
 //    }
-    @Override
+
+    /**
+     *
+     * @param value
+     * @return
+     */
+        @Override
     public boolean doAction(String value) {
         value = value.toUpperCase(); //convert choice to upper case
 
@@ -98,6 +104,9 @@ public class MainMenuView extends View {
             case "A": //Adam's print list    
                 this.printAdamList();
                 break;
+            case "J": //John's list    
+                this.printJohnList();
+                break;
             default:
                 //System.out.println("\n*** Invalid selection *** Try again");
                 ErrorView.display(this.getClass().getName(),
@@ -113,18 +122,44 @@ public class MainMenuView extends View {
         String adamFilePath = this.getInput();
 
         try {
-            if(adamFilePath.length() > 3) {
+            if (adamFilePath.length() > 3) {
                 String[] array = {"Knife", "Shovel", "String", "Coconut"};
                 int[] array2 = {3, 2, 7, 15};
 
                 System.out.println("Tools in Inventory\t\tCounts");
 
-                for (int i = 0; i < array.length; i++) {
+                for (String array1 : array) {
                     System.out.println(array[value] + "\t\t" + array2[value]);
                 }
                 System.out.println("Your report is written!");
             }
-                    
+
+        } catch (Exception exc) {
+
+            ErrorView.display(this.getClass().getName(), exc.getMessage());
+        }
+
+    }
+
+    //John's List
+    private void printJohnList() {
+        int value = 0;
+        this.console.println("\n\nLocate your filedirectory.");
+        String johnFileDirectory = this.getInput();
+
+        try {
+            if (johnFileDirectory.length() > 3) {
+                String[] array = {"Wreckage", "Reef", "Beach1", "Beach2", "Babmbo1", "Beach3", "Beach4", "Bambo2", "Cave", "Jungle2"};
+                String[] array2 = {"0-0", "0-1", "0-2", "0-3", "0-4", "0-5", "0-6", "0-7", "0-8", "1-0"};
+
+                System.out.println("Island Views\t\tGrid Location");
+
+                for (String array1 : array) {
+                    System.out.println(array[value] + "\t\t" + array2[value]);
+                }
+                System.out.println("Partial Island Location Printout.");
+            }
+
         } catch (Exception exc) {
 
             ErrorView.display(this.getClass().getName(), exc.getMessage());
