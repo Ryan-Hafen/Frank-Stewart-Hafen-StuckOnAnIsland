@@ -145,7 +145,8 @@ public class MainMenuView extends View {
     private void johnsList() {
         String fileName = "IslandLocations.txt";
 
-        try (PrintWriter writer = null) {
+        PrintWriter writer = null;
+        {
             int value = 0;
             this.console.println("\n\nLocate your filedirectory.");
             String johnFileDirectory = this.getInput();
@@ -166,7 +167,7 @@ public class MainMenuView extends View {
 
                 ErrorView.display(this.getClass().getName(), exc.getMessage());
             }
-
+            writer.close();
         }
         //Why is this illegal?
     private void startNewGame() {
