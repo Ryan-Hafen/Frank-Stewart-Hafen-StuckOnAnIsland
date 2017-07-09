@@ -12,6 +12,7 @@ import buyi.cit260.stuckOnAnIsland.exceptions.GameControlException;
 //import java.util.Scanner;-- removed when implemented view super class
 import stuckonanisland.StuckOnAnIsland;
 import byui.cit260.stuckOnAnIsland.view.GameMenuView;
+import java.io.PrintWriter;
 
 /**
  *
@@ -78,13 +79,12 @@ public class MainMenuView extends View {
 //        
 //        return value; // return the value entered
 //    }
-
     /**
      *
      * @param value
      * @return
      */
-        @Override
+    @Override
     public boolean doAction(String value) {
         value = value.toUpperCase(); //convert choice to upper case
 
@@ -105,7 +105,7 @@ public class MainMenuView extends View {
                 this.printAdamList();
                 break;
             case "J": //John's list    
-                this.printJohnList();
+                this.johnsList();
                 break;
             default:
                 //System.out.println("\n*** Invalid selection *** Try again");
@@ -142,31 +142,33 @@ public class MainMenuView extends View {
     }
 
     //John's List
-    private void printJohnList() {
-        int value = 0;
-        this.console.println("\n\nLocate your filedirectory.");
-        String johnFileDirectory = this.getInput();
+    private void johnsList() {
+        String fileName = "IslandLocations.txt";
 
-        try {
-            if (johnFileDirectory.length() > 9) {
-                String[] array = {"Wreckage", "Reef", "Beach1", "Beach2", "Babmbo1", "Beach3", "Beach4", "Bambo2", "Cave", "Jungle2"};
-                String[] array2 = {"0-0", "0-1", "0-2", "0-3", "0-4", "0-5", "0-6", "0-7", "0-8", "1-0"};
+        try (PrintWriter writer = null) {
+            int value = 0;
+            this.console.println("\n\nLocate your filedirectory.");
+            String johnFileDirectory = this.getInput();
+            try {
+                if (johnFileDirectory.length() > 3) {
+                    String[] array = {"Wreckage", "Reef", "Beach1", "Beach2", "Babmbo1", "Beach3", "Beach4", "Bambo2", "Cave", "Jungle2"};
+                    String[] array2 = {"0-0", "0-1", "0-2", "0-3", "0-4", "0-5", "0-6", "0-7", "0-8", "1-0"};
 
-                System.out.println("Island Views\t\tGrid Location");
+                    System.out.println("Island Views\t\tLocation");
 
-                for (String array1 : array) {
-                    System.out.println(array[value] + "\t\t" + array2[value]);
+                    for (String array1 : array) {
+                        System.out.println(array[value] + "\t\t" + array2[value]);
+                    }
+                    System.out.println("Partial Island Location Printout.");
                 }
-                System.out.println("Partial Island Location Printout.");
+
+            } catch (Exception exc) {
+
+                ErrorView.display(this.getClass().getName(), exc.getMessage());
             }
 
-        } catch (Exception ex) {
-
-            ErrorView.display(this.getClass().getName(), ex.getMessage());
         }
-
-    }
-
+        //Why is this illegal?
     private void startNewGame() {
         GameControl.createNewGame(StuckOnAnIsland.getPlayer());
 
