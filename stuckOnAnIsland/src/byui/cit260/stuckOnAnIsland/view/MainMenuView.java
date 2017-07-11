@@ -169,6 +169,7 @@ public class MainMenuView extends View {
             }
             writer.close();
         }
+    }
         //Why is this illegal?
     private void startNewGame() {
         GameControl.createNewGame(StuckOnAnIsland.getPlayer());
