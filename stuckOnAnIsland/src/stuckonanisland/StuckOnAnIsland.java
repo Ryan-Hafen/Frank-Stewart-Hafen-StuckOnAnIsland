@@ -68,8 +68,8 @@ public class StuckOnAnIsland {
     }
 
     public static void main(String[] args) {
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
+        //StartProgramView startProgramView = new StartProgramView();
+        //startProgramView.display();
         
         while (true) {
             try {
@@ -78,13 +78,12 @@ public class StuckOnAnIsland {
                 StuckOnAnIsland.outFile
                         = new PrintWriter(System.out, true);
 
-                String filePath = "/users/Documents/tmp/logfile.txt"; //MAC
-                //String filePath = "C:\Users\Documents\tmp\logfile.txt";  //PC
-
+                String filePath = "logfile.txt"; 
+                
                 StuckOnAnIsland.logFile = new PrintWriter(filePath);
 
-                //StartProgramView startProgramView = new StartProgramView();
-                //startProgramView.display();
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.display();
                 break;
             } catch (Exception excp) {
                 //System.out.println(excp);
