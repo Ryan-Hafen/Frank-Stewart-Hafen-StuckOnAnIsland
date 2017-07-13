@@ -6,6 +6,9 @@
 package buyi.cit260.stuckOnAnIsland.control;
 
 import buyi.cit260.stuckOnAnIsland.exceptions.MapControlException;
+import byui.cit260.stuckOnAnIsland.model.Map;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 import org.junit.Test;
 
 /**
@@ -177,5 +180,169 @@ public class MapControlTest {
                     + "\n\tExpected Result is: " + expResult);
         }
 
+    }
+
+    /**
+     * Test of createMap method, of class MapControl.
+     */
+    @Test
+    public void testCreateMap() {
+        System.out.println("createMap");
+        Map expResult = null;
+        Map result = MapControl.createMap();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getEndLocation method, of class MapControl.
+     */
+    @Test
+    public void testGetEndLocation() {
+        System.out.println("getEndLocation");
+        MapControl instance = new MapControl();
+        double expResult = 0.0;
+        double result = instance.getEndLocation();
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setEndLocation method, of class MapControl.
+     */
+    @Test
+    public void testSetEndLocation() {
+        System.out.println("setEndLocation");
+        double endLocation = 0.0;
+        MapControl instance = new MapControl();
+        instance.setEndLocation(endLocation);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getStartLocation method, of class MapControl.
+     */
+    @Test
+    public void testGetStartLocation() {
+        System.out.println("getStartLocation");
+        MapControl instance = new MapControl();
+        double expResult = 0.0;
+        double result = instance.getStartLocation();
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setStartLocation method, of class MapControl.
+     */
+    @Test
+    public void testSetStartLocation() {
+        System.out.println("setStartLocation");
+        double startLocation = 0.0;
+        MapControl instance = new MapControl();
+        instance.setStartLocation(startLocation);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getStartHealth method, of class MapControl.
+     */
+    @Test
+    public void testGetStartHealth() {
+        System.out.println("getStartHealth");
+        MapControl instance = new MapControl();
+        double expResult = 0.0;
+        double result = instance.getStartHealth();
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setStartHealth method, of class MapControl.
+     */
+    @Test
+    public void testSetStartHealth() {
+        System.out.println("setStartHealth");
+        double startHealth = 0.0;
+        MapControl instance = new MapControl();
+        instance.setStartHealth(startHealth);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of getEndHealth method, of class MapControl.
+     */
+    @Test
+    public void testGetEndHealth() {
+        System.out.println("getEndHealth");
+        MapControl instance = new MapControl();
+        double expResult = 0.0;
+        double result = instance.getEndHealth();
+        assertEquals(expResult, result, 0.0);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of setEndHealth method, of class MapControl.
+     */
+    @Test
+    public void testSetEndHealth() {
+        System.out.println("setEndHealth");
+        double endHealth = 0.0;
+        MapControl instance = new MapControl();
+        instance.setEndHealth(endHealth);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of hashCode method, of class MapControl.
+     */
+    @Test
+    public void testHashCode() {
+        System.out.println("hashCode");
+        MapControl instance = new MapControl();
+        int expResult = 0;
+        int result = instance.hashCode();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of equals method, of class MapControl.
+     */
+    @Test
+    public void testEquals() {
+        System.out.println("equals");
+        Object obj = null;
+        MapControl instance = new MapControl();
+        boolean expResult = false;
+        boolean result = instance.equals(obj);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of toString method, of class MapControl.
+     */
+    @Test
+    public void testToString() {
+        System.out.println("toString");
+        MapControl instance = new MapControl();
+        String expResult = "";
+        String result = instance.toString();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }
 }
