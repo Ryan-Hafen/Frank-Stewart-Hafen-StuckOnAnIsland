@@ -59,7 +59,7 @@ public class ViewInventoryView extends View {
                 this.saveGame();
                 break;
             case "L": // save the current game
-                this.loadBackpack();
+                this.viewLoadBackpack();
                 break;
             default:
                 //System.out.println("\n*** Invalid selection *** Try again");
@@ -159,8 +159,9 @@ public class ViewInventoryView extends View {
         System.out.println("\n*** saveGame function called ***");
     }
 
-    private void loadBackpack() {
-        loadBackpack();
+    private void viewLoadBackpack() {
+       //call the backpack.java stuff somehow
+       this.console.print("This should print the ArrayList<Backpack>");
     }
 
 }
