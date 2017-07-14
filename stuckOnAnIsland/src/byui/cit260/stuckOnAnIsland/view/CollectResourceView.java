@@ -6,30 +6,29 @@
  */
 package byui.cit260.stuckOnAnIsland.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Adam Frank
  */
-public class CollectResourceView extends View{
-    
+public class CollectResourceView extends View {
+
 //        private String promptMessage;
-    
     public CollectResourceView() {
+
 //        this.promptMessage =     
-        super( "\n********************************************************"
-             + "\n*  Resource Menu                                       *"   
-             + "\n*                                                      *"                                
-             + "\n*  W - Bottle of Water                                 *"   
-             + "\n*  F - Flashlight                                      *"   
-             + "\n*  T - Tarp                                            *"
-             + "\n*  V - Vines                                           *"
-             + "\n*                                                      *"
-             + "\n********************************************************"
+        super("\n********************************************************"
+                + "\n*  Resource Menu                                       *"
+                + "\n*                                                      *"
+                + "\n*  W - Bottle of Water                                 *"
+                + "\n*  F - Flashlight                                      *"
+                + "\n*  T - Tarp                                            *"
+                + "\n*  V - Vines                                           *"
+                + "\n*  Q - Go Back                                         *"
+                + "\n*                                                      *"
+                + "\n********************************************************"
         );
     }
-    
+
 //    void displayMainMenuView() {
 //        boolean done = false; //set flag to not done
 //        do {
@@ -42,7 +41,6 @@ public class CollectResourceView extends View{
 //            done = this.doAction(menuOption);
 //        } while (!done);
 //    }
-
 //    private String getMenuOption() {
 //        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
 //        String value = ""; // value to be returned
@@ -68,21 +66,18 @@ public class CollectResourceView extends View{
 //        
 //        return value; // return the value entered
 //    }
-
     @Override
     public boolean doAction(String value) {
         value = value.toUpperCase(); //convert choice to upper case
-            return false;
+        return false;
     }
 
-   void collectResource(String resourceAdded) {
-       System.out.println("\n*** displayCollectResource() stub function called ***");
-       
-   }
+    void collectResource(String resourceAdded) {
+        System.out.println("\n*** displayCollectResource() stub function called ***");
+    }
 
     void displayCollectResourceMenu() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }
