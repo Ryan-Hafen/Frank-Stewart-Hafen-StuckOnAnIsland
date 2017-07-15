@@ -4,20 +4,28 @@
  * and open the template in the editor.
  */
 package byui.cit260.stuckOnAnIsland.model;
+
 import java.io.Serializable;
 import java.util.Objects;
+
 /**
  *
- * @author Fran
+ * @author Frank
  */
 public class Backpack implements Serializable {
 
-private String resourceDescription;
-private double resourceQuantity;
-private double resourceCapacity;
-
+    private String resourceDescription;
+    private double resourceQuantity;
+    private double resourceCapacity;
 
     public Backpack() {
+    }
+
+    public Backpack(String resourceDescription, double resourceQuantity,
+            double resourceCapacity) {
+        this.resourceDescription = resourceDescription;
+        this.resourceQuantity = resourceQuantity;
+        this.resourceCapacity = resourceCapacity;
     }
 
     public String getResourceDescription() {
@@ -44,13 +52,14 @@ private double resourceCapacity;
         this.resourceCapacity = resourceCapacity;
     }
 
-    
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 73 * hash + Objects.hashCode(this.resourceDescription);
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceQuantity) ^ (Double.doubleToLongBits(this.resourceQuantity) >>> 32));
-        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceCapacity) ^ (Double.doubleToLongBits(this.resourceCapacity) >>> 32));
+        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceQuantity)
+                ^ (Double.doubleToLongBits(this.resourceQuantity) >>> 32));
+        hash = 73 * hash + (int) (Double.doubleToLongBits(this.resourceCapacity)
+                ^ (Double.doubleToLongBits(this.resourceCapacity) >>> 32));
         return hash;
     }
 
@@ -66,13 +75,16 @@ private double resourceCapacity;
             return false;
         }
         final Backpack other = (Backpack) obj;
-        if (Double.doubleToLongBits(this.resourceQuantity) != Double.doubleToLongBits(other.resourceQuantity)) {
+        if (Double.doubleToLongBits(this.resourceQuantity)
+                != Double.doubleToLongBits(other.resourceQuantity)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.resourceCapacity) != Double.doubleToLongBits(other.resourceCapacity)) {
+        if (Double.doubleToLongBits(this.resourceCapacity)
+                != Double.doubleToLongBits(other.resourceCapacity)) {
             return false;
         }
-        if (!Objects.equals(this.resourceDescription, other.resourceDescription)) {
+        if (!Objects.equals(this.resourceDescription,
+                other.resourceDescription)) {
             return false;
         }
         return true;
@@ -80,7 +92,9 @@ private double resourceCapacity;
 
     @Override
     public String toString() {
-        return "Backpack{" + "resourceDescription=" + resourceDescription + ", resourceQuantity=" + resourceQuantity + ", resourceCapacity=" + resourceCapacity + '}';
+        return "Backpack{" + "resourceDescription=" + resourceDescription
+                + ", resourceQuantity=" + resourceQuantity
+                + ", resourceCapacity=" + resourceCapacity + '}';
     }
 
 }
