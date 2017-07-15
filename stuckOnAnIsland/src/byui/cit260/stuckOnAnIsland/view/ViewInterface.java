@@ -12,5 +12,5 @@ package byui.cit260.stuckOnAnIsland.view;
 public interface ViewInterface {
     public void display();
     public String getInput();
-    public boolean doAction(String vlaue);
+    public boolean doAction(String value);
 }

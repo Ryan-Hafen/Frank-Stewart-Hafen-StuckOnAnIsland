@@ -35,7 +35,7 @@ public class WreckageInventoryView extends View  {
                + "\n*  H - Fishing Hooks                                   *"
                + "\n*  T - Tarp                                            *"
                + "\n*  P - Buckets                                         *"
-               + "\n*  Q - Quit                                            *"
+               + "\n*  E - Exit                                            *"
                + "\n*  Please enter your selection:                        *"
                + "\n*                                                      *"
                + "\n********************************************************"
@@ -77,9 +77,9 @@ public class WreckageInventoryView extends View  {
             case "P": //pick up buckets
                 System.out.println("you picked up buckets");
                 break;
-            case "Q": //quit the wreckage menu
+            case "E": //quit the wreckage menu
                 System.out.println("you closed the wreckage inventory menu");
-                break;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;

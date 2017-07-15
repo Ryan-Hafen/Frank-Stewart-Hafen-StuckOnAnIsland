@@ -11,7 +11,6 @@ import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
 import byui.cit260.stuckOnAnIsland.model.ToolInventory;
 import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
 import stuckonanisland.StuckOnAnIsland;
-import buyi.cit260.stuckOnAnIsland.control.BackpackControl;
 
 /**
  *
@@ -31,7 +30,7 @@ public class ViewInventoryView extends View {
                 + "\n*  R - View Raft Materials collected                   *"
                 + "\n*  L - List Backpack Inventory                         *"
                 + "\n*  S - Save game                                       *"
-                + "\n*  Q - Quit                                            *"
+                + "\n*  E - Exit                                            *"
                 + "\n*  Please enter your selection:                        *"
                 + "\n*                                                      *"
                 + "\n********************************************************"
@@ -61,6 +60,9 @@ public class ViewInventoryView extends View {
             case "L": // save the current game
                 this.viewLoadBackpack();
                 break;
+            case "E": //quit the wreckage menu
+                System.out.println("you closed the inventory menu");
+                return true;
             default:
                 //System.out.println("\n*** Invalid selection *** Try again");
                 ErrorView.display(this.getClass().getName(),

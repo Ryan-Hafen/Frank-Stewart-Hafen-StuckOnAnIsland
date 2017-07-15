@@ -17,11 +17,10 @@ import byui.cit260.stuckOnAnIsland.model.RaftStatus;
 import byui.cit260.stuckOnAnIsland.model.Scene;
 import byui.cit260.stuckOnAnIsland.model.ToolInventory;
 import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
-import java.util.HashSet;
-import java.util.Set;
 import java.io.*;
 import stuckonanisland.StuckOnAnIsland;
 import buyi.cit260.stuckOnAnIsland.exceptions.GameControlException;
+import byui.cit260.stuckOnAnIsland.view.GameMenuView;
 
 /**
  *
@@ -46,7 +45,6 @@ public class GameControl {
 
     public static void createNewGame(Player player) {
         Game game = new Game();
-        StuckOnAnIsland.setCurrentGame(game);
         
         game.setPlayer(player);
         
@@ -63,6 +61,11 @@ public class GameControl {
         WreckageInventory[] wreckageInventory = GameControl.createWreckageInventoryList();
         ToolInventory[] toolInventory = GameControl.createToolInventoryList();
         RaftMaterial[] raftMaterial = GameControl.createRaftMaterialList();
+                
+        StuckOnAnIsland.setCurrentGame(game);
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     public static void createHealth() {
