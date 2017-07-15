@@ -121,7 +121,6 @@ public class StartProgramView extends View {
     public boolean doAction(String value) {
         //System.out.println("\n*** doAction() called **");
         //return true;
-
         if (value.length() < 2) {
             //System.out.println("\nInvlaid players name: "
             //+ "Then name must be greater than one character in length");
