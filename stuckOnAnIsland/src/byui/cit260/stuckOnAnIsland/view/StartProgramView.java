@@ -8,22 +8,30 @@ package byui.cit260.stuckOnAnIsland.view;
 import buyi.cit260.stuckOnAnIsland.control.GameControl;
 import byui.cit260.stuckOnAnIsland.model.Player;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import stuckonanisland.StuckOnAnIsland;
 
-// ******* removed when implemented view super class *******  
-//import java.util.Scanner;
+
 /**
  *
  * @author Ryan-Hafen
  */
-public class StartProgramView extends View {
-// ******* removed when implemented view super class *******  
-//    private String promptMessage;
-//    private String headerMessage;
 
+public class StartProgramView {
+    private final String promptMessage;
+    protected final BufferedReader keyboard = StuckOnAnIsland.getInFile();
+    protected final PrintWriter console = StuckOnAnIsland.getOutFile();
+    String selection = null;
+    boolean valid = false;
+    
+    
     public StartProgramView() {
-// ******* removed when implemented view super class *******       
-//        System.out.println
-        super("\n********************************************************"
+        this.promptMessage = "\n* Please enter you name:                                 *";
+        this.displayBanner();
+    }
+    private void displayBanner() {
+    System.out.println("\n********************************************************"
                 + "\n********************************************************"
                 + "\n*                                                      *"
                 + "\n*                                                      *"
@@ -71,94 +79,72 @@ public class StartProgramView extends View {
                 + "\n**********************************************************"
                 + "                                                            "
                 + "                                                            "
-                + "\nPlease enter you name:                                    ");
+        );
     }
-// ******* removed when implemented view super class *******  
-//    private void displayBanner() {
-//        System.out.println(  
-//        );
-//    }
 
-// ******* removed when implemented view super class *******      
-//    public void displayStartProgramView() {
-//        //System.out.println("\n*** displayStartProgram() function called ***");
-//                boolean done = false;
-//                do {
-//                    //Prompt for and get player name
-//                    String playersName = this.getPlayersName();
-//                    if(playersName.toUpperCase().equals("Q")) //user wants to quit
-//                        return; //exit game
-//                    
-//                    //do the requested action and display the next view
-//                    done = this.doAction(playersName);
-//                } while (!done);
-//    }
-// ******* removed when implemented view super class *******      
-//    private String getPlayersName() {
-//        //System.out.println("\n*** getPlayersName() called **");
-//        //return "Joe";
-//        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-//        String value = ""; // value to be returned
-//        boolean valid = false; // initialize to not valid
-//        
-//        while (!valid) {
-//            System.out.println("\n" + this.promptMessage);
-//            
-//            value = keyboard.nextLine(); // get next line typed on keyboard
-//            value = value.trim(); // trim off leadnig and trailing blanks
-//            
-//            if (value.length() < 1) { // value is blank
-//                System.out.println("\nInvalid value: value can not be blank");
-//                continue;
-//            }
-//            
-//            break; // end the loop
-//        }
-//        
-//        return value; // return the value entered
-//    }
-    @Override
+    public void displayStartProgramView() {
+                boolean done = false;
+                do {
+                    String playersName = this.getPlayersName();
+                    if(playersName.toUpperCase().equals("Q")) //user wants to quit
+                        return; //exit game
+                    done = this.doAction(playersName);
+                } while (!done);
+    }     
+    private String getPlayersName() {
+        
+        String value = ""; // value to be returned
+        boolean valid = false; // initialize to not valid
+        
+        try {
+            while (!valid) {
+                System.out.println("\n" + this.promptMessage);
+            
+                value = this.keyboard.readLine(); // get next line typed on keyboard
+                value = value.trim(); // trim off leadnig and trailing blanks
+            
+                if (value.length() < 1) { // value is blank
+                    ErrorView.display(this.getClass().getName(),
+                            "\n*** You must enter a value *** ");
+                 continue;
+                }
+                break; // end the loop
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        value = value.trim(); // trim off leadnig and trailing blanks
+        return value; // return the value entered
+    }
+    
+    
     public boolean doAction(String value) {
-        //System.out.println("\n*** doAction() called **");
-        //return true;
         if (value.length() < 2) {
-            //System.out.println("\nInvlaid players name: "
-            //+ "Then name must be greater than one character in length");
             ErrorView.display(this.getClass().getName(),
                     "\nInvlaid players name: "
                     + "Then name must be greater than one character in length");
             return false;
         }
-        // call createPlayer() control function
         Player player = GameControl.createPlayer(value);
 
-        if (player == null) { //if unsuccessful
-            //System.out.println("\nError creating the player.");
+        if (player == null) {
             ErrorView.display(this.getClass().getName(),
                     "\nError creating the player.");
             return false;
         }
-
-        // display next view
         this.displayNextView(player);
-
         return true; // success !
     }
-
+//
     private void displayNextView(Player player) {
-        // display a custom welcome message
-        System.out.println("\n============================================================"
-                + "\n Welcome to the game " + player.getName()
-                + "\n We hope you have a lot of fun!"
-                + "\n========================================================="
+        System.out.println("\n**********************************************************"
+                + "\n* Welcome to the game " + player.getName()
+                + "\n* We hope you have a lot of fun!                         *"
+                + "\n**********************************************************"
         );
-
-        // Create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
-
-        // Display the main menu view
-// ******* removed when implemented view super class *******        
-//        mainMenuView.displayMainMenuView();
         mainMenuView.display();
     }
+
+    
 }

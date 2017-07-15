@@ -83,7 +83,7 @@ public class StuckOnAnIsland {
                 StuckOnAnIsland.logFile = new PrintWriter(filePath);
 
                 StartProgramView startProgramView = new StartProgramView();
-                startProgramView.display();
+                startProgramView.displayStartProgramView();
                 break;
             } catch (Exception excp) {
                 //System.out.println(excp);

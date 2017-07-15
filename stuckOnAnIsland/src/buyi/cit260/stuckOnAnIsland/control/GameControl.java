@@ -22,6 +22,7 @@ import java.util.Set;
 import java.io.*;
 import stuckonanisland.StuckOnAnIsland;
 import buyi.cit260.stuckOnAnIsland.exceptions.GameControlException;
+import byui.cit260.stuckOnAnIsland.view.GameMenuView;
 
 /**
  *
@@ -63,6 +64,9 @@ public class GameControl {
         WreckageInventory[] wreckageInventory = GameControl.createWreckageInventoryList();
         ToolInventory[] toolInventory = GameControl.createToolInventoryList();
         RaftMaterial[] raftMaterial = GameControl.createRaftMaterialList();
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     public static void createHealth() {

@@ -14,9 +14,7 @@ import byui.cit260.stuckOnAnIsland.model.Map;
  */
 public class GameMenuView extends View {
 
-//    private String promptMessage;
     public GameMenuView() {
-//        this.promptMessage =
         super("\n****************************************************************"
                 + "\n*  Game Play Menu                                              *"
                 + "\n*    This menu will help you navigate through the game.        *"
@@ -45,6 +43,7 @@ public class GameMenuView extends View {
         );
     }
 
+    @Override
     public boolean doAction(String value) {
         value = value.toUpperCase(); //convert choice to upper case
 
@@ -98,7 +97,6 @@ public class GameMenuView extends View {
                 this.displayHelpMenu();
                 break;
             default:
-                //System.out.println("\n*** Invalid selection *** Try again");
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");
                 break;

@@ -26,26 +26,19 @@ public abstract class View implements ViewInterface {
     public View() {
     }
 
-    public View(String message) {
-        this.displayMessage = message;
+    public View(String promptMessage) {
+        this.displayMessage = promptMessage;
     }
 
     @Override
     public void display() {
 
-        boolean done = false; //set flag to not done
+        String value;
         do {
-            // promplt for and get players name
-            String value = this.getInput();
-            
-            if (value.toUpperCase().equals("Q")) //user wants to quit
-            {
-                return; // exit the game
-            }
-            // do the requested action and dispaly the next view
-            done = this.doAction(value);
-        } while (!done);
-
+            System.out.println(this.displayMessage);
+            value = this.getInput();
+            this.doAction(value);
+        } while (!value.equals("Q"));
     }
 
     @Override
