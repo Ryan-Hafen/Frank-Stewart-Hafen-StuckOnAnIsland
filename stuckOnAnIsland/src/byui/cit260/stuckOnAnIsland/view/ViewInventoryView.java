@@ -11,7 +11,6 @@ import byui.cit260.stuckOnAnIsland.model.RaftMaterial;
 import byui.cit260.stuckOnAnIsland.model.ToolInventory;
 import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
 import stuckonanisland.StuckOnAnIsland;
-import buyi.cit260.stuckOnAnIsland.control.BackpackControl;
 
 /**
  *

@@ -8,9 +8,7 @@ package stuckonanisland;
 import byui.cit260.stuckOnAnIsland.model.Game;
 import byui.cit260.stuckOnAnIsland.model.Player;
 import byui.cit260.stuckOnAnIsland.view.StartProgramView;
-//import com.sun.istack.internal.logging.Logger;
 import java.io.*;
-import java.util.ArrayList;
 
 /**
  *

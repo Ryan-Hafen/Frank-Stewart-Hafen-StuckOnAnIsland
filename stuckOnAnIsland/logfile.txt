@@ -1,0 +1,2 @@
+byui.cit260.stuckOnAnIsland.view.StartProgramView - 
+Invlaid players name: Then name must be greater than one character in length

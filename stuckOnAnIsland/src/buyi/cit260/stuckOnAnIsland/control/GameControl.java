@@ -45,7 +45,6 @@ public class GameControl {
 
     public static void createNewGame(Player player) {
         Game game = new Game();
-        StuckOnAnIsland.setCurrentGame(game);
         
         game.setPlayer(player);
         
@@ -62,6 +61,8 @@ public class GameControl {
         WreckageInventory[] wreckageInventory = GameControl.createWreckageInventoryList();
         ToolInventory[] toolInventory = GameControl.createToolInventoryList();
         RaftMaterial[] raftMaterial = GameControl.createRaftMaterialList();
+                
+        StuckOnAnIsland.setCurrentGame(game);
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
