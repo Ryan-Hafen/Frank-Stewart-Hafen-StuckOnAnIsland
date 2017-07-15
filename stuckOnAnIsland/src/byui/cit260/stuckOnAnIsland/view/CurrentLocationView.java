@@ -15,8 +15,10 @@ class CurrentLocationView extends View{
     
     public CurrentLocationView() {
 //        this.promptMessage =    
-        super( "\\n*** CurrentLocationView() stub function called ***"
+        System.out.println( "\nYour map location is currently at (1,1)"
         );
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     @Override

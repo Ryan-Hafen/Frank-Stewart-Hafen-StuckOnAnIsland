@@ -48,7 +48,7 @@ public class BackpackControl implements Serializable {
     }
 
     public static Backpack createBackpack() {
-        System.out.println("\n*** createBackpack() stub function called ***");
+        //System.out.println("\n*** createBackpack() stub function called ***");
 
         return null;
     }
