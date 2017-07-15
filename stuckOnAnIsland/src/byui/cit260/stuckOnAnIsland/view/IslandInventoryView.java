@@ -15,8 +15,19 @@ public class IslandInventoryView extends View{
     
     public IslandInventoryView() {
 //        this.promptMessage =    
-        super( "\\n*** IslandInventoryView() stub function called ***"
-        );
+        //super( "\\n*** IslandInventoryView() stub function called ***");
+        
+        String inventoryList[] = {"Knife", "Rope", "Water Bottle", "Flashlight"};
+        
+        System.out.println("Your current inventory is:");
+        
+        for(int i = 0; i < 4; i++) {
+            System.out.println("\nItem " + (i + 1) + ": " + inventoryList[i]);
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+        
     }
 
     @Override
