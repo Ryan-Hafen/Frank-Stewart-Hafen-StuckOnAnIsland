@@ -1,2 +1,0 @@
-byui.cit260.stuckOnAnIsland.view.MainMenuView - 
-*** Invalid selection *** Try again

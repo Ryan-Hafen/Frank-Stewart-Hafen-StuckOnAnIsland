@@ -20,7 +20,7 @@ public class HelpMenuView extends View{
              + "\n*  T - How to build tools                              *"
              + "\n*  F - How to fix the raft                             *"
              + "\n*  H - How to collect inventory                        *"
-             + "\n*  E - Exit to Main Menu                               *"
+             + "\n*  E - Exit                                            *"
              + "\n*                                                      *"
              + "\n*  Please enter your selection:                        *"
              + "\n*                                                      *"

@@ -35,8 +35,7 @@ class SaveGameView extends View {
                 this.saveGame();
                 break;
             case "N": // Help menu
-                this.displayGameMenu();
-                break;
+                return true;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 //ErrorView.display(this.getClass().getName(),
@@ -63,10 +62,5 @@ class SaveGameView extends View {
         //GameControl.createSaveGame(StuckOnAnIsland.getPlayer(), StuckOnAnIsland.getCurrentGame());
         //GameMenuView gameMenu = new GameMenuView();
         //gameMenu.display();
-    }
-
-    private void displayGameMenu() {
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
     }
 }
