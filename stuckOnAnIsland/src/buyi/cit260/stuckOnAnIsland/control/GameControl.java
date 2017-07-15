@@ -17,8 +17,6 @@ import byui.cit260.stuckOnAnIsland.model.RaftStatus;
 import byui.cit260.stuckOnAnIsland.model.Scene;
 import byui.cit260.stuckOnAnIsland.model.ToolInventory;
 import byui.cit260.stuckOnAnIsland.model.WreckageInventory;
-import java.util.HashSet;
-import java.util.Set;
 import java.io.*;
 import stuckonanisland.StuckOnAnIsland;
 import buyi.cit260.stuckOnAnIsland.exceptions.GameControlException;

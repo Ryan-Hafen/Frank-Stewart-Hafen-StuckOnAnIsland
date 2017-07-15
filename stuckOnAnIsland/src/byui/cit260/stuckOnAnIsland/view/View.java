@@ -5,7 +5,6 @@
  */
 package byui.cit260.stuckOnAnIsland.view;
 
-import java.util.Scanner;
 import stuckonanisland.StuckOnAnIsland;
 import java.io.*;
 import java.util.logging.Level;
@@ -34,37 +33,37 @@ public abstract class View implements ViewInterface {
     public void display() {
 
         String value;
-        do {
+        
+        while(!valid) {
             System.out.println(this.displayMessage);
             value = this.getInput();
-            this.doAction(value);
-        } while (!value.equals("Q"));
+            valid = doAction(value);
+        } 
     }
 
     @Override
     public String getInput() {
-        try {
-            while (!valid) {
-                //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-                selection = this.keyboard.readLine();
-
-                break;
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        selection = selection.trim();
+//        try {
+//            while (!valid) {
+//                //Scanner keyboard = new Scanner(System.in); // get infile for keyboard
+//                selection = this.keyboard.readLine();
+//
+//                break;
+//            }
+//        } catch (IOException ex) {
+//            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        selection = selection.trim();
 
         String value = ""; // value to be returned
         boolean valid2 = false; // initialize to not valid
 
         try {
             while (!valid2) {
-                System.out.println("\n" + this.displayMessage);
+//                System.out.println("\n" + this.displayMessage);
 
                 value = this.keyboard.readLine(); // get next line typed on keyboard
-                if (value.length() < 1) { // value is blank
-                    //System.out.println("\n*** You must enter a value *** ");
+                if (value.length() < 1) {
                     ErrorView.display(this.getClass().getName(),
                             "\n*** You must enter a value *** ");
                     continue;

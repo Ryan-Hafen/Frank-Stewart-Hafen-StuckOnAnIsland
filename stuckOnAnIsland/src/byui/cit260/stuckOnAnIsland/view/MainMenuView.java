@@ -50,6 +50,9 @@ public class MainMenuView extends View {
             case "H": // save the current game
                 this.displayHelpMenu();
                 break;
+            case "Q": // save the current game
+                return true;
+//                break;
             case "A": //Adam's print list    
                 this.printAdamList();
                 break;
